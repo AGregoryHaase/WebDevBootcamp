@@ -1,0 +1,12 @@
+  
+.box {
+    width: 20vw;
+    height: 20vw;
+    background-image: conic-gradient(at 0% 30%, red 10%, yellow 30%, #1e90ff 50%);
+  }
+  
+ .box2 {
+     width: 200px;
+     height: 200px;
+     background-image: linear-gradient(brown, purple, yellow, green);
+ } 

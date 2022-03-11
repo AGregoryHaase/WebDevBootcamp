@@ -1,0 +1,132 @@
+
+background: conic-gradient{ 
+     red 6deg, orange 6deg 18deg, yellow 18deg 45deg, 
+     green 45deg 110deg, blue 110deg 200deg, purple 200deg);
+}
+
+span a {
+    color:lightblue;
+}
+footer a {
+    color: red;
+}
+
+ul a {
+    color:yellow;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: red;
+    text-transform: uppercase;
+    text-decoration: wavy underline;
+}
+
+button {
+    color: plum;
+    background-color: #eaac8b;
+}
+
+p   {
+    color: yellow;
+    background-color: black;
+}
+
+ul  {
+    color: saddlebrown;
+}
+ #smellslikeshit {
+     color: brown;
+     text-transform: uppercase;
+     text-decoration: underline;
+     background-color: crimson;
+ }
+ 
+ header a {
+     color:teal;
+     text-size-adjust: 30px;
+ }
+
+ h2 + button {
+     background-color: black;
+     color: white;
+     text-decoration: underline;
+ }
+
+ footer > a {
+     color: chartreuse;
+ }
+
+input[type="password"] {
+     color:blue;
+ }
+ 
+ input {
+     color: pink;
+ }
+
+ .testing {
+     text-decoration: underline;
+ }
+
+ a[href*=google] {
+     color:blue;
+ }
+
+ a:hover {
+     color: green;
+ }
+ button:hover {
+        background-color: #E09515;
+        color: white;
+ }
+
+ .testing button:hover {
+        background-color: pink;
+        color: purple;
+ }
+
+ button:active {
+     background-color: yellow;
+     color: gold;
+ }
+
+     .mypoop::after {
+         content: " SOMETHING PUT IN AFTER THE CONTENT USING CSS";
+         color: red;
+ }
+
+    .heartbefore::before {
+        content: HEART ;
+        color: red;
+}
+
+.aside220122 {
+    background-color: blue;
+}
+
+.box {
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(blue,yellow,white,red, black);
+}
+
+.gradboxsec {
+    width: 1000px;
+    height: 1000px;
+    background-image: linear-gradient(yellow,pink,red,orange);
+}
+
+.gradhead2 {
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(yellow,pink,red,orange);
+}
+
+.checkb {   
+    width: 1000px;
+    height: 1000px;
+    background-image:
+     conic-gradient(#fff 0.25turn, #000 0.25turn 0.5turn, #fff 0.5turn 0.75turn, #000 0.75turn)
+     top left / 25% 25% repeat;
+  border: 1px solid;
+}

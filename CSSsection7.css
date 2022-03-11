@@ -1,0 +1,122 @@
+h1 {
+    color: white;
+    background-color: black;
+    text-shadow: #FC0 1px 0 10px;
+    text-decoration-color: rgb(204, 180, 192);
+}
+
+.a2 {
+    color: white;
+    background-color: black;
+}
+
+#IDSELECT {
+    color: red;
+    background: black;
+}
+
+span {
+    color: red;
+}
+
+.class {
+    background-color: indigo;
+    color: lavender;
+}
+
+
+/* okay so this is the Coding Excercise 9 */
+
+/* Make all LI's blue */
+.todo  {
+    color:red;
+}
+
+/* Make everything with the class of 'done' grey*/
+.done {
+    color:grey;
+}
+
+/* Make the element with the id of 'clear' have a red BG and white text */
+#clear {
+    background-color:red;
+    color:white;
+}
+/* I'll out in the the HTML */
+
+/* I'm going to see if I can style a horizontal line */
+hr {
+    border: 10px solid black;
+  border-radius: 5px;
+}
+
+.yellow  {
+    color: yellow;
+}
+
+.indigo {
+    color: rgb(84, 74, 92);
+}
+
+li a {
+    color: blue;
+}
+
+/* css for coding excercise 10*/
+
+.codeex10 a {
+    font-size:30px;
+    color: teal;
+}
+
+#dislikes a {
+    font-weight: bold;
+    color: Red;
+}
+
+div > a {
+    color: orange;
+}
+
+input {
+    color: orchid;
+}
+
+input[type="password"] {
+    color: red;
+}
+
+a:hover {
+    color: plum;
+}
+
+
+/* DO NOT TOUCH THIS FILE!!! it's for CE. I have changed it slightly */
+.square {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 10px solid black;
+  }
+  /* DO NOT TOUCH THIS FILE!!!  */
+  /* THIS CODE WILL MAKE SENSE ONCE WE COVER FLEXBOX!  */
+  #board {
+    display: flex;
+    margin: 0 auto;
+    width: 500px;
+    flex-wrap: wrap;
+  }
+  /* DO NOT TOUCH THIS FILE!!!  *
+
+  /* this bit is the bit I'm supposed to do.  */
+  /* WRITE YOUR CODE IN HERE!!!!  */
+.square:nth-of-type(2n) {
+    background-color:black;
+}
+.square:nth-of-type(odd) {
+    background-color:red;
+}
+
+h3::first-letter {
+    font-size: 30px;
+}
