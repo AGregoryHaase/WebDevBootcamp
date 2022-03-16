@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="section14.css">
+    <title>JavaScript Basics!</title>
+</head>
+<body>
+    <h1>JavaScript Basics! <br>
+    Section 14!</h1>
+    
+    <Section class="contents">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#140">140. What Matters In This Section</a></li>
+            <li><a href="#141">141. Why JavaScript is Awesome</a></li>
+            <li><a href="#142">142. Primatives &amp; The Console</a></li>
+            <li><a href="#143">143. JavaScript numbers</a></li>
+            <li><a href="#144">144. WTF is NaN</a></li>
+            <li><a href="#145">145. Quick Numbers Quiz</a></li>
+            <li><a href="#146">146. Variables & Let</a></li>
+            <li><a href="#ex15">Coding Excercise 15: Our First Variables Excercise</a></li>
+            <li><a href="#147">147. Updating Variables</a></li>
+            <li><a href="#148">Const &amp; Var</a></li>
+            <li><a href="ex16">Our First Constants Excercise</a></li>
+            <li><a href="#quiz3">Quiz 3: Variables Quiz</a></li>
+            <li><a href="#149">149. Booleans</a></li>
+            <li><a href="#150">150. Variable Naming and Conventions</a></li>
+            <li><a href="#quiz4">Quiz 4: Quick Variable Quiz</a></li>
+            </ul>
+    </Section>
+
+    <section id="140">
+        <h2 id="140">140. What Matters In This Section</h2>
+        <p>
+            Right then, what matters in this section? Everything. Everything is in the crucial section. 
+            <ul>
+                <li>Understanding the role of Javascript</li>
+                <li>Javascript Numbers</li>
+                <li>Variables and Let</li>
+                <li>Const</li>
+                <li>variable naming</li>
+                <li>Booleans</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="141">
+        <h2>Why JavaScript is Awesome</h2>
+        <p>
+            It's going to take time and practice to master. When you've learned JS there's a ton of stuff you can do. Mega. 
+            JS is logic heavy. A lot more creative. More ways of achieving the end result. 
+        </p>
+        <p>Colt gives an example of a map of Africa game. He then gives an example of the aeroplane scroll page. Both are on codepen.
+            He then gives some examples of websites and how they interact with the user. Netflix is one of them. 
+        </p>
+    </section>
+
+    <section id="142">
+        <h2>142. Primatives &amp; The Console</h2>
+        <p>
+            This is the real starting point. He says the first step is to learn how to use JS on it's own. Then we learn how to manipulate
+            HTML/CSS. We have to learn JavaScript in a Vaccuum.
+        </p>
+        <p><h4>primative types</h4>
+        <u>THE BASIC BUILDING BLOCKS</u>
+        <ul>
+            <li>Number</li> <!--number, string, boolean null, undefined, n, s, b, n, u, nsbnu. nsbnu. nsbnu. nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, nsbnu, number, string, boolena, null, undefined-->
+            <li>string</li> <!--JUST USING THE COMMENTS TO PRCATICE NSBNUSB. NUMBER, STRING, BOOLEAN, NULL, UNDEFINED, SYMBOL, BIG INT.  -->
+            <li>Boolean</li> <!--NSBNUSB, NSBNUSB, NUMBER STRING BOOLEAN NULL UNDEFINED SYMBOL BIGINT-->
+            <li>Null</li> <!--NUMBER STRING BOOLEAN NULL UNDEFINED SYMBOL BIG INT-->
+            <li>Undefined</li>
+            <li>symbol</li>
+            <li>bigint</li>
+        </ul>
+        </p>
+        <p> 
+            Where are we going to type our code?
+             We start typing our code in the JavaScript console in Chrome. This isn't the standard place to write code. 
+             We will be using our editor and saving files, just for now we are using the console while we learn the basics. 
+        </p>
+        <p>
+            The first thing we do is open the console. Command+Option+J will open it up. Alternativly go to view, developer and JS console
+        </p>
+        <p>
+            What we have here is REPL. Which stands for Read, Eval, Print, Loop.
+        </p>
+        <p>
+            The console is a place where we can play around with code. Don't do anything permanent here because as soon 
+            as you close the window it will be gone. 
+        </p>
+        </section>
+        
+        <section id="143">
+        <h3>143. JavaScript Numbers!</h3>
+        <p>
+            In JavaScript we store numbers, manipulate, do math, increment or decriment.  
+            There's only one number type. Some languages have floating points.
+            <ul>
+            <li>JS has <em>one</em> number type  </li> 
+            <li>Positive numbers</li>
+            <li>Negative numbers</li>
+            <li>Whole numbers (integers</li>
+            <li>Decimal numbers</li>
+        </ul>
+        </p>
+        <p>we then go to the dev tools and type a number.
+            We have basic math operators that are built in to JS. THey use symbols that are pretty standard. 
+            +,-,/,%.
+        </p>
+        <p>PEMDAS is used, Perenthesis, exponants, multiplication, division, addition, subtraction. </p>
+        <p>TO create a comment we use two forward slashes in a row //</p>
+        <p>Two operators we may not be familiar with.</p>
+        <h5>Modulo</h5>
+        <p>THe % sign (modulo) gives the remainder. So 9 mod 2 would be how many times does 2 go into 9 and then gives the remainder which would be one </p>
+        <h5>exponentiation</h5>
+        <p>To create an exponant we use ** </p>
+    </section>
+
+    <section id="144">
+        <h2>WTF is NaN</h2>
+        <p>NaN is considered a number. NaN is a numeric value that represents someting that is...not a number. 
+            Examples are 0/0 <!-- NaN-->
+            1 + NaN <!--NaN-->
+        </p>
+        <p>
+            NaN is considered a number but what does this mean? In JS we have an operator called typeof.
+            using typeof will tell us what something is. If we type "typeof 0/0 we will get "NaN".
+            If we use typeof NaN we get number.
+        </p>
+    </section>
+
+    <section id="145">
+        <h2>Quick Numbers Quiz</h2>
+        <p>
+            Very basic math quiz. what would we see in the console if we put in 4 + 3 * 4 / 2. 3 * 4 / 2 + 4? 10?
+            Yes, thank God. We got 10.
+        </p>
+        <p>NExt we have (13 % 5) ** 2. 
+            So the modulo of 13 % 5 is 3. 3 ** 2 is 9?
+            Yep, 9.
+        </p>
+        <p>
+            200 + 0/0 = NaN
+        </p>
+    </section>
+
+    <section id="146">
+        <h2>Variables</h2>
+        <p><b>VARIABLES ARE LIKE LABELS FOR VALUES</b></p>
+        <ul>
+            <li>We can store a value and give it a name sot hat we can:</li>
+            <ul>
+                <li>Refer back to it later</li>
+                <li>Use that Vlaue to do...stuff</li>
+                <li>Or change it later on</li>
+            </ul>
+        </ul>
+        <p>
+            WE may be running some complicated tasks where we need to refer back to some former calculation.
+        </p>
+        <p>To declare a variable We use "let someName = value;"</p>
+        <p>More specifically we can use "let year = 1985;</p>
+        <p>Now every time we refer to year in the console we get 1985. </p>
+        <p>So we can declare anything that has a number value by using "let"</p>
+        <p>We can say let v1 = 5; let v2 = 3; let totalV = v1 + v2; then when we type in totalV it will give us the total </p>
+        <p><b>BE AWARE! If there is a change in the number a variable then this will not automatically show up in the total</b></p>
+        <p>For example, in our example above, if v2 changed to 6 then the totalV would not change unless we ran let totalV = v1 + v2; again.</p>
+        <p>It will stay the same as a snapshot of what we previously input.</p>
+    </section>
+
+    <section id="ex15">
+        <h2>coding excercise 15: Our First Variables excercise</h2>
+        <p>Okay well that couldn't have been easier.</p>
+    </section>
+
+    <section id="147">
+        <h2>147. Updating Values</h2>
+        <p>Okay, so we have an example of score. we declare <blockquote>let score = 2;</blockquote>  So now if we type "score" we get 2.</p>
+        <p>If we then type <blockquote>score = score + 2</blockquote> it updates the score to 4.</p>
+        <p>However, we can short hand this by using +=. Foe example, we can use <blockquote>score += 2</blockquote></p>
+        <p>We can also use <blockquote>-=</blockquote> or <blockquote> *= </blockquote>    or  <blockqoute>/=</blockqoute></p>
+        <p>And then, for even shorter hand we can use <blockquote> -- </blockquote> or <blockquote>++</blockquote>
+        to incrament or decrement by one.</p>
+    </section>
+
+    <section id="148">
+        <h2>Const &amp; Var</h2>
+        <p>Other than "let" there are 2 other keywords we can use to create variables. They are Const and Var.
+            <em>Const</em> works just like let, except you cannot change the value! You can't change it in the same way that you can change "let" with += or ++ or -=
+        </p>
+        <p>
+            You can use it store the value of pi, days of the week. General things that are constants. Feet in miles etc.
+        </p>
+        <p>When we get to arrays and objects and data structures in JS, const will be more useful. </p>
+        <p><em>Var</em> is <b>the old variable keyword</b> 
+        Before Let and Const, Var was the only way of declaring variables. These days, there isn't really a reason to use it.</p>
+    </section>
+
+    <section id="149">
+        <h2>BOOLEANS</h2>
+        <P>
+            BOOLEANS ARE very simple, we have two values for booleans - True or False. THat's it. We write the words true or false.
+            we can write <blockquote>let isActiveGame = true</blockquote> and then <blockquote>isActiveGame</blockquote> would return <blockquote>true</blockquote>
+        </P>
+        <p>
+            You can actually just type the variable label and then true of false. so <blockquote>dinp = false</blockquote> will return <blockquote>false</blockquote>
+        </p>
+        <p>
+           In JavaScript Variables can change type. So if we start with a number e.g. <blockquote>let numPups = 23;</blockquote> 
+           we can change this to a boolean <blockquote>numPups = false;</blockquote> and then back to a number <blockquote>numPups = 100;</blockquote>
+           RAre that you might want to do that but you can, if you want to. In other languages if you make a number it remains a number and cannot be changed. 
+        </p>
+    </section>
+
+    <section id="150">
+        <h2>150. Variable Naming and Conventions</h2>
+        <p>
+            A quick convo around naming our variable. We have to think of a name for our variables. THere are rules that we must follow.
+            There are conventions for best practice. 
+        </p>
+            <h3>rules and conventions</h3>
+            <p>
+              <ul>
+                  <li>can't have spaces</li>
+                  <li>Can't start with a digit</li>
+                  <li>can, can use an underscore to start but not recommended</li>
+                  <li>use camel casing likeThisIsHowToCamelCaseWithLowerCaseForFirstWord</li>
+                  <li>Name variables well. </li>
+                    <ul>
+                        <li>instead of "let loggedInUser = true" use isLoggedIn = true. Putting "is" makes it clearer that it is a boolean</li>
+                    </ul>
+
+              </ul>  . 
+            </p>
+    </section>
+
+    <section>
+        <p>Cool beans, finsihed that section pretty quickly. I'm assuming it's going to get a lot tougher! Okay, onto section 15.</p>
+    </section>
+</body>
+</html>
