@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Strings and More, section 15</title>
+</head>
+<body>
+    <h1>JavaScript Strings and More, section 15</h1>
+<section>
+    <h2>CONTENTS</h2>
+    <ul>
+        <li><a href="#151">151. What Matters in This Section</a> </li>
+        <li> <a href="#152">152. Introducing Strings</a></li>
+        <li> <a href="#ex17">Coding Excercise 17: Our First String Variables Practice</a></li>
+        <li><a href="#153">153. Indices &amp; Length</a></li>
+        <li><a href="#quiz5">Strings Basics Quiz</a></li>
+        <li><a href="#154">154. Strings Method</a>s</li>
+        <li><a href="#ex18">Coding Excercise 18: String Methods Practice</a></li>
+        <li><a href="#155">155. Strings Methods With Arguments</a></li>
+        <li><a href="#ex19">Coding Excercise 19: More String Methods Practice</a></li>
+        <li><a href="#156">156. String Template Literals - SUPER USEFUL</a></li>
+        <li><a href="#157">157. Undefined &amp; Null</a></li>
+        <li><a href="#158">158. Random Numbers &amp; The Math Object</a></li>
+        <li><a href="#ex20">Coding Excercise 20: String Template Literal Excercise</a></li>
+    </ul>
+</section>
+
+    <section id="151">
+        <h2>151. What Matters in this Section</h2>
+        <p>Still some very important basics. Today we talk about strings. Most of the stuff is crucial</p>
+        <h3>Crucial</h3>
+        <ul><li>String Basics</li>
+            <li>Indices and Length</li>
+            <li>Undefined &amp; Null</li>
+            <li>String Methods</li>
+            <li>String Template Literals</li>
+        </ul>
+        <h3>important</h3>
+        <ul><li>Random Numbers and the Math Object.</li></ul>
+    </section>
+
+    <section id="152">
+        <h2>152. Introduction to Strings</h2><!-- nbsnusb. Numbers, Booleans, Strings, Undefined, Null, Symbol, Bigint-->
+        <p>
+            So far we have seen numbers and booleans. Now we are on to Strings. These are <b>STRINGS OF CHARACTERS</b>
+            <blockquote>Strings are another primitive type in JavaScript. They represent <b>text</b>, and must be wrapped in qoutes</blockquote>
+        </p> 
+    </section>
+
+    <section id="153">
+        <h2>153. Indices &amp; Length</h2>
+        <p> <b>STRINGS ARE INDEXED</b></p>
+        <P>STRINGS are indexed, every letter in a string has a corresponding number. 
+            i.e. Chicken
+        <ul>
+            <li>C=0</li>
+            <li>H=1</li>
+            <li>I=2</li>
+            <li>C=3</li>
+            <li>K=4</li>
+            <li>E=5</li>
+            <li>N=6</li>
+        </ul>
+        We have these indeces. If we add [n] after the string variable and then put in a number we are then accessing the 
+        nth number in that string. So then if we have <blockquote>let name = "Antony Haase"</blockquote> and then we do <blockquote>name[5]</blockquote>
+        then it should return the 5th letter, counting from A as zero. And, yep, I just tested that and it returned <blockquote>'y'</blockquote>
+        </P>
+        <p>
+            If we request a value that doesn't exist. E.g. if we put in name[20] we would have "undefined" returned to us.
+            Undefined is a special value, a primitive value and is JS's way of telling us that there is nothing there. WE cover more on this later.
+        </p>
+        <p>
+            We usually don't use these indices in this way. Typically we will check the first character of a string. 
+            Colt gives an example of a phone number. We can write logic to check if someone has used a perenthesis to start the number. 
+        </p>
+        <p><h3>Length</h3>
+        every string has a special property of length. So if I go into the console and type <blockquote>name.length</blockquote>
+        then it will return the length of the name <blockquote>12</blockquote>
+        NOTE, this is not the same as the highest index as we are starting the count of the length from 1, not zero.
+        </p>
+        <p><h3>concatenation</h3></p>
+        <p>
+            If we write <blockquote>"poop" + "a" + "scoop"</blockquote>  we get <blockquote>poopascoop</blockquote>
+        </p>
+        <p>We can create two variables like <blockquote>let name = "Antony Haase";</blockquote>
+        <blockquote>let random = "wears big bras";</blockquote> and then go <blockquote>name + random</blockquote>
+        and we would get back <blockquote>Antony Haasewears big bras</blockquote>
+    </p>
+    <p>How do I put in a space? you have to do the space in <blockquote>" "</blockquote> 
+    so we go <blockquote>name + " " + random</blockquote> this way we get <blockquote>Antony Haase wears big bras</blockquote>
+    Cool Beans.
+    </p>
+    Finally, if we go <blockquote>1 + "hi"</blockquote> then JS tries to coerce them into a common type and the result is a string. 
+
+    </section>
+
+    <section id="154">
+        <h2>STRING METHODS</h2>
+            <p><b>METHODS ARE BUILT-IN ACTIONS WE CAN PERFORM WITH INDIVIDUAL STRINGS</b></p>
+            <p>
+                They help us do things like 
+                <ul>
+                <li>searching within a string</li>
+                <li>Replacing part of a string</li>
+                <li>Changing the casing of a string</li>
+            </ul>
+            </p>
+        <p>
+            You can find a list of the methods by typing a 'string.' into the console. Yep, the list is pretty big. 
+            You can also find a list of methods on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">MDN string docs.</a> 
+        </p>
+        <p>
+            Right, so we kick off with writing a <blockquote>let message = "something"</blockquote> and then <blockquote>something.toUpperCase</blockquote>
+            which gives <blockquote>SOMETHING</blockquote> we can then write <blockquote>let msgUp = message.upper</blockquote>
+            so that when we type <blockquote>msgUp</blockquote> we get <blockquote>MESSAGE</blockquote>
+            Here is a snippet taken from the console
+            <blockquote>
+                let message = "you are amazing and you can do anything" <br>
+                undefined <br>
+                message.toUpperCase() <br>
+                'YOU ARE AMAZING AND YOU CAN DO ANYTHING' <br>
+                let capsmessage = message.toUpperCase() <br>
+                undefined <br>
+                capsmessage <br>
+                'YOU ARE AMAZING AND YOU CAN DO ANYTHING'
+            </blockquote>
+        </p>
+        <p>We can also use .lowerCase</p>
+        <p>The next example we see in the video is <b>TRIM</b> 
+        basically, it trims spaces from the left or right of a string.</p>
+        <p>We can chain methods together. For example, we can do <blockquote>message.trim().toUpperCase()</blockquote>
+        </p>
+    </section>
+    <section id="155">
+        <h2>155. STRING METHODS WITH ARGUMENTS</h2>
+        <P>
+            Okay, so these look like <blockquote>thing.method(arg)</blockquote>
+            <b>Some methods accept arguments that modify their behaviour. Think of them as inputs that we can pass in. 
+                We pass these arguments inside of the parentheses.</b>
+        </P>
+        <p>
+            <b>indexOf</b> 
+            If we have <blockquote>let tvShow = "catdog"</blockquote>
+            then we can use <blockquote>tvShow.indexOf('cat')</blockquote>
+            or <blockquote>tvShow.indexOf('dog')</blockquote>
+            and it will return to us the position in the index that the (passed in word)
+            occurs at.
+         </p>
+         <p>
+             Here is some text from the console 
+             <blockquote>
+                let tvFilm = 'catdog'; <br> 
+                undefined <br>
+                tvFilm.indexOf('cat') <br>
+                0 <br>
+                tvFilm.indexOf('dog') <br>
+                3 <br>
+             </blockquote>
+             If we look for something that isn't in the string then we get -1 e.g. <blockquote>tvFilm.indexOf ('5') <br> -1 </blockquote>
+         </p>
+         <p>
+             Awesome. That's just mega. So now what?
+         </p>
+         <p>
+             Well, Colt says that if you ever have questions about htese methods, especially the more comlicated ones then head
+             over to MDN and read the docs. It has examples and info on how it works.
+         </p>
+         <p>
+             <h3>Slice</h3>
+             Colt says that something we will see a lot is .slice and here is a snippet from the console
+             <blockquote>
+                let msg = "this is my message to you" <br>
+                undefined <br>
+                let sliceMsg = msg.slice(7) <br>
+                undefined <br>
+                let trimSliceMsg = sliceMsg.trim() <br>
+                undefined <br>
+                trimSliceMsg <br>
+                'my message to you' <br>
+             </blockquote>
+             We can trim the back of the message too by using .slice(0,10) e.g.
+             <blockquote>
+                let msgTwo = trimSliceMsg.slice(0,10) <br>
+                undefined <br>
+                msgTwo <br>
+                'my message' <br>
+             </blockquote>
+         </p>
+         <p>
+             You can also pass in a negative index. So 
+             <blockquote>
+                msgTwo.slice(-7)
+                'message'
+             </blockquote>
+         </p>
+         <h3>replace</h3>
+         <p>
+             We have to pass in two arguments, the first is what we want to replace, the second is what we want to replace it with.
+             it looks like .replace(thing to be replaced, thing to replace with)
+            So, for example, 
+            <blockquote>
+                name.replace('Haase', 'Gregory') <br>
+                'Antony Gregory' <br>
+                let name = name.replace('Haase', 'Gregory') <br>
+                undefined <br>
+                name <br>
+                'Antony Gregory' <br>
+            </blockquote>
+            We also have .repeat 
+            <blockquote>
+                "love".repeat(20) <br>
+                'lovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelovelove' <br>
+            </blockquote>
+         </p>
+    </section id="ex19">
+    <h3>Coding Excercise 19: More String Methods Practice</h3>
+    <p> 
+    const word = "skateboard"; <br>
+    let facialHair = word.slice(5, 10).replace('o', 'e'); <br>
+    facialHair <br>
+    'beard' <br>
+    </p>
+
+    <section id="156">
+        <h2>156. String Template Literals - SUPER USEFUL</h2>
+        <P>
+            TEMPLATE LITERALS. First of all let's look at life without template literals. 
+            we would have <blockquote>let product = "artichoke";</blockquote>
+            Then <blockquote>let price = 2.25;</blockquote>
+            and then <blockquote>let qty = 5;</blockquote>
+            and what we want to do is print a string that says something like - you bought x artichoke and the total is price times quantity.
+            so for this we can concatonate 
+            <blockquote>
+                'you bought ' + qty + ' ' + product + '. Total is: ' + price*qty; <br>
+                'you bought 5 artichoke. Total is: 11.25'</blockquote>
+                While this does work, it is a <em>lot</em> of work. Thankfully we now have template literals. 
+            </P>
+            <p>
+                With template literals, a newer syntax, where we can embed an expression inside the string and that expression will be evaluated and
+                  turned into a string. The example given is 
+                  <blockquote>
+                    `I counted ${3 + 4} sheep`; <br>
+                    'I counted 7 sheep'
+                  </blockquote>
+                  There's a couple of things we must know. We hve to use the backtick (`) character. 
+                  We can actually jsut create a string using backticks. 
+                  What is special about backticks is that when they are combined with ${}, whatever is inside the curly braces will 
+                  be treated as an expression and evaluated.
+            </p>
+            <p>
+                I just did 
+                <blockquote>
+                    `hey ho, what do you know? Do you know what 59995 divided by 823 is? Sure, it's ${59995 / 823}`; <br>
+                    "hey ho, what do you know? Do you know what 59995 divided by 823 is? Sure, it's 72.89793438639126"  
+                </blockquote>
+                Going back to what we made earlier, without string template literals. we would have 
+                <blockquote>
+                    `you bought ${qty} ${product}. Total is: $${price * qty}`; <br>
+                    'you bought 5 artichoke. Total is: $11.25'
+                </blockquote>
+                Just to note, we used a double $$ as the first one would escape our string due to it being part of the syntax.                
+            </p>
+            <p>
+                We can also call a method inside of the curly brackets 
+                <blockquote>
+                    `you bought ${qty} ${product.toUpperCase()}. Total is: $${price * qty}`; <br>
+                    'you bought 5 ARTICHOKE. Total is: $11.25'
+                </blockquote>
+            </p>
+    </section>
+
+    <section id="157">
+        <h2>157. Undefined &amp; Null</h2>
+        <p>
+            Both are primative values and can be a bit confusing at first. It can seem as though they have negative connotations. 
+            It might seem like they refer to a problem. 
+            Both are single value. Both Null and undefined are values. 
+            <p>Undefined is JS's way of saying "I don't know what you want"</p> 
+            <p>Null is intentionally set at that value.</p> 
+            
+            <ul>
+                <li>Null</li>
+                    <ul>
+                        <li>"Intentional absence of any value"</li>
+                        <li>Must be assigned</li>
+                    </ul>
+                <li>Undefined</li>
+                    <ul>
+                        <li>Variables that do not have an assigned value are undefined.</li>
+                    </ul>
+            </ul>
+        </p>
+    </section>
+
+    <section id="158">
+        <h2>158. Random Numbers &amp; The Math Object</h2>
+        <p>
+            <b>MATH OBJECT</b> contains properties and methods for mathematical constants and functions
+        </p>
+       <p>
+           Cool, so you type "math" in to the console and hit enter. It brings up a drp down menu of loads of functions and constants.
+       </p>
+       <p>
+           But what is an object? It's a collection of properties and methods. huh, interesting. Instead of "polluting the namespace" as Colt puts it, by simply having the properties and functions immediately available to us. 
+           We have to type math. first. So for example we might want PI. instead of typing PI we have to put 
+           <blockquote>
+            Math.PI <br>
+            3.141592653589793 <br>
+            Math.E <br>
+            2.718281828459045
+           </blockquote>
+           Read more about the math objects on MDN where there is a page for every single method.
+       </p>
+       <p>
+           we look at <blockquote>Math.floor</blockquote>
+           which rounds down
+           <blockquote>Math.ceil</blockquote>
+           rounds up. 
+       </p>
+       <p>
+         We also look at random numbers. <blockquote>Math.random()</blockquote>  
+         gives us a random decimal between 0 and 1(non-inclusive)
+       </p>
+       <p>
+           we then go on to 
+           <blockquote>
+            Math.floor(Math.random() * 100) + 1; <br>
+            89
+           </blockquote>
+       </p>
+    </section>
+
+    <section id="ex20">
+        <p>
+            Okay, so I did the quiz but slightly confused.
+            I wasn't getting it right and wasn't sure what to do so I did it in the console. When I did it in the console it worked -
+            <blockquote>
+                const die1 = Math.floor(Math.random() * 6) + 1; //random number from 1-6 <br>
+                const die2 = Math.floor(Math.random() * 6) + 1; //random number from 1-6 <br>
+                `roll: You rolled a ${die1} and a ${die2}. They sum to ${die1 + die2};` <br>
+            </blockquote>
+            It worked. But didn't work on the webdev website quiz page. So I reread the instructions and jsut put 
+            <blockquote>
+                let roll = `roll: You rolled a ${die1} and a ${die2}. They sum to ${die1 + die2};`
+            </blockquote>
+            And that worked in the webdev quiz page but didn't work in the console. So, a little bit confused about that. Anyway, time to move on. to the next section. 
+            Yahoo!
+        </p>
+    </section>
+</body>
+</html>
