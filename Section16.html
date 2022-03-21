@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 16 <br>JavaScript Decision Making</title>
+</head>
+<body>
+    <h1>Section 16 <br>JavaScript Decision Making</h1>
+
+    <section>
+        <h2>Contents</h2>
+
+        <ul>
+            <li><a href="#159">159. What Matters In This Section</a> </li>
+            <li><a href="#160">160. Decision Making With Code??</a></li>
+            <li><a href="#161">161. Comparison Operators</a></li>
+            <li><a href="#162">Equality: Triple Vs. Double Equals</a></li>
+            <li><a href="#quiz6">Quiz 6: Comparison Quiz!</a></li>
+            <li><a href="#163">163. Console, Alert, &amp; Prompt</a></li>
+            <li><a href="#164">164. Running JavaScript From A Script</a></li>
+            <li><a href="#165">165. If Statements</a></li>
+            <li><a href="#ex21">Coding Excercise 21: Our First Conditional Excercise</a></li>
+            <li><a href="#166">166. Else-If</a></li>
+            <li><a href="#167">167. Else</a></li>
+            <li><a href="#ex22">Coding Excercise 22: getColor Conditional Excercise</a></li>
+            <li><a href="#168">168. Nesting Conditionals</a></li>
+            <li><a href="ex23">Coding Excercise 23: Nested Conditionals</a></li>
+            <li><a href="#169">169. Truth-y &amp; False-y Values</a></li>
+            <li><a href="#170">170. Logical AND</a></li>
+            <li><a href="ex24">Coding Excercise 24: Logical AND Mystery Excercise</a></li>
+            <li><a href="#171">171. Logical OR</a></li>
+            <li><a href="#172">172. Logical NOT</a></li>
+            <li><a href="#173">173. The Switch Statement Is...A Lot</a></li>
+        </ul>
+    </section>
+
+    <section id="159">
+        <h2>159. What Matters in This Section</h2>
+        <p>
+            Making decision with code, boolean logic. A lot of stuff straight into crucial. COnditionals is probably the chunkiest part of the section witht the new syntax If, Else-If and Else.
+
+            <h3>All Crucial to know!!!</h3>
+            <ul>
+                <li>Comparison Operators</li>
+                <li>Running JavaScript From a File</li>
+                <li>Conditionals: If, Else-If, and Else</li>
+                <li>Truth-y and False-y Values</li>
+                <li>Logical AND</li>
+                <li>Logical OR</li>
+                <li>Logical NOT</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="160">
+        <h2>160. Boolean Logic: Decision Making With Code</h2>
+        <p>
+            This will apply to any programming language; Python or Ruby or Java or something else. 
+            Concepts are universal.
+            Decision making here is talking about having different outcomes based off of certain criteria.
+        </p>
+        <p>
+            First we go to Reddit and he shows us how it says not logged in or logged in. How when you're not logged in then you can't comment or post anything. 
+            So when he says decision making he says it's just having different branching paths depending on some input. 
+            ie. if there are no comments then display this (there are no comments sign) or if there are comments then display those comments. 
+        </p>
+    </section>
+
+    <section id="161">
+        <h2>161. Comparison Operators</h2>
+        <p>
+            Right so we start off with the old greater than lesser than signs > and < and the we add in >= greater than or equal to and <= less than or equal too. In the console I put in my age and then greater than or equal to something. 
+        </p>
+        <p>
+            as a list he shows us 
+            <ul>
+                <li> > greater than </li>
+                <li> < Less than </li>
+                <li> >= greater than or equal to</li>
+                <li> <= less than or equal to</li>
+                <li> == equality </li>
+                <li> != not equal </li>
+                <li> === strict equality </li>
+                <li> !== strict non equality </li>
+            </ul>
+
+            We are not limited to using these with numbers. You can compare two string.
+            PLease be careful though as things can get tricky when comparing case, special characters and accents!
+            We then look at unicode and how it gives all characters an underlying number value
+            <a href="https://home.unicode.org/">Here is the unicode website.</a> In WebDev he goes into /charts/
+
+            All of the above return a boolean! True or false.
+        </p>
+    </section>
+
+    <section id="162">
+        <h2>162. Equality: Triple Vs. Double Equals</h2>
+        <h2>aka. <b>WEIRDNESS</b> </h2>
+        <p>
+           The double equals (==)
+           <ul>
+               <li>Checks for equality of value, but not equality of type. </li>
+               <li>It coerces both values to the same type and then compares them. </li>
+               <li>This can lead to some unexpected results!</li>
+           </ul>
+           We then go into the console and type <blockquote>1 == 1</blockquote>
+           and we get <blockquote>true</blockquote> as a response.
+        </p>
+        <p>We then hit <blockquote>1 == `1`</blockquote> and we get the same response <blockquote>true</blockquote></p>
+        <p>Now obviously 1 the number and "1" the string are not the same thing.</p>
+        <p>The weirdness continues</p>
+
+        <p>Here are a few examples.
+        <p>Here comes the weirdness!!!</p>
+            <ol>
+                <li>1 != 2 <br>  <!-- (1) -->
+                    true</li>
+                <li>1 != `2` <br> <!-- (2) -->
+                    true</li>
+                <li>1 != `1` <br> <!-- (3) -->
+                    false</li>
+                <li>1 == `1` <br> <!-- (4) -->
+                    true</li>
+                <li>1 !== `1` <br> <!-- (5) -->
+                    true</li>
+                <li>1 === `1` <br> <!-- (6) -->
+                    false</li>
+                </ol>
+            Okay so there is some strange behavior going on here. First of all 1 != 2 is true which you would expect.   As is 1 != "2". 
+            </p>       
+            <p>Where it gets weird is 
+                <blockquote>1 != `1` <br>false</blockquote>  
+                and 
+                <blockquote>1 == `1`<br>true<blockquote>
+                but then 
+                <blockquote>1 == `1` <br> true</blockquote>
+                so you would assume that !== would be false, however
+                <blockquote>1 !== `1` <br>true</blockquote>
+                The key is in the names. !== is strict non equality whilst === is strict equality. 
+            </p>
+            <p>
+                For now, !== and === are the two operators we should use. Colt actually says use triple equals always.
+            </p>
+    </section>
+
+    <section id="quiz6">
+        <h2>Quiz 6: Comparison Quiz!</h2>
+        <p>Passed</p>
+    </section>
+
+    <section id="163">
+        <h2>Console, Alert, &amp; Prompt</h2>
+        <p>
+            Console.log acts as print in most other languages.
+            Here we are going to open or JS in a file instead of using the console.
+            First we go over some console details. 
+        </p>
+        <p>
+            We can pass in multiple arguments i.e. console.log(1+4, HI, true)
+            From the console this looks like 
+            <blockquote>
+                console.log(1+5, `HI`, true); <br>
+                6 'HI' true
+            </blockquote>
+        Also, just like with the Math object, console is also an object where methods can be accessed without polluting the namespace. <a href="https://developer.mozilla.org/en-US/docs/Web/API/console">See MDN Docs for a list of methods.</a>
+        </p>
+        <p>
+            We now get two more methods that we may want to know about. The first one is called "alert" which prints out from the console to the website. It looks like 
+            <blockquote>alert("text")</blockquote>
+            yawn. And 
+            <blockquote>prompt("more text")</blockquote> 
+            The last one is pretty cool though. You can set it to have the user enter some data. 
+        </p>
+        <p>
+            We have an example where we 
+            <blockquote>
+                let userInput = prompt("please enter a number") <br>
+                undefined <br>
+                userInput <br>
+                '5'
+            </blockquote>
+            Colt says that for now we can use this if we want to have demo's on getting user input. 
+            Typically though we would create a form. We would make an input in the form with HTML and we can use JS once we learn how to connect the two.
+        </p>
+        <p id="parse">
+            Note, user input gives us a string. We may want to turn the string into a number.
+            We do this with <blockquote>parseInt(userInput)</blockquote>
+            Which looks like 
+            <blockquote>
+                prompt("please enter a number") <br>
+                '5' <br>
+                let userInput = prompt("please enter a number") <br>
+                undefined <br>
+                userInput <br>
+                '5' <br>
+                parseInt(userInput) <br>
+                5
+            </blockquote>
+            We can then add to the number and avoid concatonating a coerced string.
+        </p>
+    </section>
+    
+    <section id="164">
+        <h2>164. Running JavaScript From A Script!</h2>
+        <p>
+            While it is possible to write multiple lines of code in the console by hitting shift + enter we can't save anything into the console. It's a good place to test code and to debug code.
+        </p>
+        <p>
+            To run a JS file we have to end the file with .js. I've created a file called section16.js.
+            Now we have to connect it to this section16.html file.
+            Once we have connected the file we should be able to go to the console and see what we have written in the 
+            Section16.js file.
+        </p>
+        <p>
+            Cool Beans, it worked.
+        </p>
+        <p>
+            Next Colt enters <blockquote>let total = 1 + 3;</blockquote> Although this doesn't appear in the console directly, as the above message does, we do have access to the result of it by typing in <blockquote>total</blockquote>.
+        </p>
+        <p>
+            After this Colt tells us that the best place to put the link to the .js file is at the bottom of the body. 
+            This is because we want to have all of our HTML elements loaded before we apply our scripts to it.
+        </p>
+    </section>
+
+    <section id="165">
+        <h2>165. If Statements</h2>
+        <p>
+            <h3>conditionals</h3>
+            If, Else-if and Else are all statements. When combined they create full conditionals.
+        </p>
+        <p>
+            We start to create a conditional with an if statement. An if statement only runs if the given statement is true.
+        </p>
+        <p>The if statement we see on the card is <blockquote>let rating =3:</blockquote>
+        and then 
+        <blockquote>if (rating === 3) { <br>
+            console.lof ("YOU ARE A SUPERSTAR!"); <br>
+        } 
+    </blockquote>
+        </p>
+        Wait I have an idea! 
+        <aside>Wow!!! I just created a thing!</aside>
+        <blockquote>
+            let answer = Math.floor(Math.random() * 10) + 1 <br>
+            let userInput = prompt("Guess the correct number between 1-10") <br>
+            <br>
+            if (answer === prompt) { <br>
+                console.log("Congratulations") <br>
+            } <br>
+            <br>
+            if (userInput !== answer) { <br>
+                console.log("Nope, try again!") <br>
+            } <br>
+        </blockquote>
+       
+        <P>
+            I'd like to get the random number and the message to display to the user. I'll find out how to do that. 
+            But that's pretty cool that I go t my little idea to work.
+        </P>
+        <p>
+            OKay, so I'm just working through the next part of the video and he shows us console.log(random)
+            So I've gone back to my code above and added it in. It now looks like 
+            <blockquote>
+                let answer = Math.floor(Math.random() * 10) + 1 <br>
+                let userInput = prompt("Guess the correct number between 1-10")  <br>
+                <br>
+                if (userInput === answer) {
+                    console.log("Congratulations") <br>
+                    console.log(`you guessed the correct number! The number is ${answer}`); <br>
+                } <br>
+                <br>
+                if (userInput !== answer) { <br>
+                    console.log("Nope, try again!") <br>
+                    console.log(`The correct number was ${answer}`) <br>
+                    console.log(`you guessed ${userInput}`); <br>
+                } <br>
+            </blockquote>
+            HOwever, when running the code I realised there was a bug. When I was guessing the right number it wasn't recognising it and I was still getting the ("Nope, try again") message. 
+        </p>
+        <p>
+            I'm quite happy as I realised straight away that this could be that we had different data types ie. one was a string and one was a number. So I ran typeOf 
+            <blockquote>
+                typeof          <br>
+                    answer      <br>
+                'number'        <br>
+                typeof          <br>
+                    userInput   <br>
+                'string'        <br>
+            </blockquote>
+            So the user input is creating a string whilst the random generated number is, yep, a number. 
+        </p>
+        <p>
+            To solve this I have to run parseInt. <a href="#parse">There is a note on this above</a> 
+        </p>
+        <p>
+            What I'm wondering about is where in the order I should put this. Let me just have a go and see what happens.
+        </p>
+        <p>
+            OKay, cool, I got it to work. We create another statement for the parse, so we now have
+            <blockquote>
+                let answer = Math.floor(Math.random() * 10) + 1 <br>
+                let userInput = prompt("Guess the correct number between 1-10") <br>
+                let userInputP = parseInt(userInput); <br>
+                <br>
+                if (userInputP === answer) { <br>
+                    console.log("Congratulations") <br>
+                    console.log(`you guessed the correct number! The number is ${answer}`); <br>
+                } <br>
+                <br>
+                if (userInputP !== answer) { <br>
+                    console.log("Nope, try again!") <br>
+                    console.log(`The correct number was ${answer}`) <br>
+                    console.log(`you guessed ${userInput}`); <br>
+                } <br>
+            </blockquote>
+            and this now gives us, when the answer is correct
+            <blockquote>
+                Congratulations <br>
+                you guessed the correct number! The number is 5 <br>
+            </blockquote>
+            <p>Now I just need to find out how to display this to the user on the website!</p>
+        </p>
+        <p>
+            Anyway, back to the video. Colt creates a new .js file called app. He tests that it's working.
+            Then he creates a statement 
+            <blockquote>
+            if (1 + 1 === 2) {
+                console.log("Math still works!")    
+            } 
+            </blockquote>
+            Okay so we actually use the math.random now
+            <blockquote>
+                let random = Math.random(); <br>
+                if (random < 0.5) {
+                    console.log("your number is less than 0.5!!")
+                    console.log(random);
+                }
+            </blockquote>
+            we also create a statement for if the number is greater than .05
+            <blockquote>
+                if (random >= 0.5) {
+                    console.log("your number is greater than 0.5!!")
+                    console.log(random);
+                }
+            </blockquote>
+        I've added this to my js file and it runs fine. 
+        </p>
+    </section>
+
+    <section id="ex21">
+        <h2>Coding Excercise 21: Our First Conditional Statement</h2>
+        <p>
+            From the function below if "num" is even then print out "even"
+            <blockquote>
+                function isEven(num){ <br>
+                    //WRITE YOUR CODE BETWEEN THIS LINE: ↓ ↓ ↓ ↓  <br>
+                    if(num % 2 == 0) <br>
+                    console.log("even"); <br>
+            </blockquote>
+        </p>
+    </section>
+
+    <section id="166">
+        <h2>166. Else -If</h2>
+        <p>
+            OKay so we get the example of 
+            <blockquote>
+                let rating = 2; <br>
+                <br>
+                if (rating === 3) { <br>
+                    console.log("you are a superstar!"); <br>
+                } <br>
+                else if (rating === 2) { <br>
+                    console.log("Meets expectations"); <br>
+                } <br> 
+                else-if (rating === 1) { <br>
+                    console.log("needs imporovement"); <br>
+                } <br>
+            </blockquote>
+            As you can see we can have multiple else-if statements.
+            We're going to make something with days of the week and strings. 
+            We make a variable called dayOfWeek
+            <blockquote>
+                const dayOfWeek = `Monday`;             <br>
+                                                        <br>
+                if (dayOfWeek === `Monday`) {           <br>
+                    console.log("urgh I hate Mondays!") <br>
+                } else if (dayOfWeek === `Saturday`) { <br>
+                    console.log("yay I love saturdays") <br>
+                } else-if (dayOfWeek === "friday"){ <br>
+                    console.log("fridays are decent, especially afer work") <br>
+                }                                    <br>
+            </blockquote>
+            What would be good here is if we can actually pull the real day of the week into JS instead of us creating the dayOfTheWeek ourselves. Maybe we will do that at a later.
+        </p>
+        <p>THe next example is for pricing to get into an amusement park.
+        So we have 0-5 - free, 5 - 10 child £10, 10 - 65 Adult £20, 65+ Senior £10.</p>
+        In the JS file I have created the following
+        <blockquote>
+            // amusement park               <br>
+            const age = 80;                 <br>
+            if (age < 5) {                  <br>
+                console.log("free")         <br>
+            } else if(age < 10)             <br>
+                console.log("Child £10"     <br>
+            } else if (age < 65){           <br>
+                console.log("adult £20"     <br>
+            } else if (age > 65) {          <br>
+                console.log("Senior £10")   <br>
+            }                               <br>
+        </blockquote>
+        Quick note on this. When the first statement is false then we go to the second statement and it still holds that the first statement is false so there is no need to write the first statement again
+        <p>In the console this, and everything else above creates</p> 
+        <blockquote>
+            Math still works                <br>
+            Hello from my first JS file     <br>
+            Nope, try again!                <br>
+            The correct number was 2        <br>
+            you guessed 5                   <br>
+            your number is less than 0.5!!  <br>
+            0.035728855596872               <br>
+            urgh I hate Mondays!            <br>
+            Senior £10                      <br>
+        </blockquote>
+    </section>
+
+    <section id="167">
+        <h2>167. Else</h2>
+        <p>
+            Else is the last part of the conditional. It's going to run as the last part of this journey if nothing else matched first. Think of it as - if nothing else is true then do this.
+        </p>
+        <p>
+            OKay so now we have added in a couple more days of the week that print out "meh"
+            <blockquote>
+                const dayOfWeek = `Monday`;                                     <br>    
+                                                                                <br>
+                if (dayOfWeek === `Monday`) {                                   <br>
+                    console.log("urgh I hate Mondays!")                         <br>
+                } else if (dayOfWeek === `Saturday`) {                          <br>
+                    console.log("yay I love saturdays")                         <br>
+                } else if (dayOfWeek === "friday"){                             <br>
+                    console.log("fridays are decent, especially afer work")     <br>
+                }else if (dayOfWeek === `Tuesday`) {                            <br>
+                    console.log("meh")                                          <br>
+                }else if (dayOfWeek === `Wednesday`) {                          <br>
+                    console.log("meh")                                          <br>
+                }else if (dayOfWeek === `Thursday`) {                           <br>
+                    console.log("meh")                                          <br>
+                }                                                               <br>
+            </blockquote>
+            As you can see we currently have Tue, Wed, Thurs with a print out of "meh". 
+        </p>
+        <p>
+            So what we can do here is replace the three else ifs for the "meh" days with else. 
+            THe else does not need any perentheses and no statement. It just requires else { console.log()}
+            So just else and then straight into curly brackets.
+        </p>
+        <p>
+            Our code will now look like
+            <blockquote>
+                const dayOfWeek = `Monday`;                                     <br>    
+                                                                                <br>
+                if (dayOfWeek === `Monday`) {                                   <br>
+                console.log("urgh I hate Mondays!")                             <br>
+                } else if (dayOfWeek === `Saturday`) {                          <br>
+                console.log("yay I love saturdays")                             <br>
+                } else if (dayOfWeek === "friday"){                             <br>
+                console.log("fridays are decent, especially afer work")         <br>
+                } else {                                                        <br>
+                  console.log("meh")                                            <br>
+                }                                                               <br>
+            </blockquote>
+            Just to double check against what I have running in my .js File
+            <blockquote>
+                    const dayOfWeek = `tuesday`;                                        <br>        
+                                                                                        <br>
+                if (dayOfWeek === `Monday`) {                                           <br>
+                    console.log("urgh I hate Mondays!")                                 <br>
+                } else if (dayOfWeek === `Saturday`) {                                  <br>
+                    console.log("yay I love saturdays")                                 <br>
+                } else if (dayOfWeek === "friday"){                                     <br>
+                    console.log("fridays are decent, especially afer work")             <br>
+                }else {                                                                 <br>
+                    console.log("meh")                                                  <br>
+                }                                                                       <br>
+            </blockquote>
+            Yep, looks the same except a couple of spaces and the const day of the week. I've ran this in the console and it runs fine with the following
+            <blockquote>
+                Math still works
+                <br>  Hello from my first JS file
+                <br>   Nope, try again!
+                <br>   The correct number was 1
+                <br>   you guessed 5
+                <br>   your number is greater than 0.5!!
+                <br>   0.6101702361128332
+                <br>   meh
+                <br>   Senior £10
+            </blockquote>
+            So that's good news. It all works so far. 
+        </p>
+    </section>
+
+    <section id="ex22">
+        <p>
+            Spoke too soon. I can't get this to work. 
+            <blockquote>
+               <br> function getColor(phrase){
+               <br> //WRITE YOUR CODE BETWEEN THIS LINE: ↓ ↓ ↓ ↓ 
+               <br> 
+               <br> if (phrase === `stop`){
+               <br>     Console.log("red");
+               <br> } 
+               <br> else if (phrase === `slow`){
+               <br>        console.log("yellow");
+               <br> } 
+               <br> else if (phrase === `go`){
+               <br>        console.log("green");
+               <br> } 
+               <br> else {
+               <br>         console.log("purple");
+               <br> }
+               <br>     //AND THIS LINE ↑↑↑↑↑
+               <br> }
+            </blockquote>
+            which to me looks okay but then I'm getting 
+            <blockquote>
+                -when phrase is "stop" <br>
+                referenceError: Can't find variable: Console in file:///eval/src/index.js (line 5)
+            </blockquote>
+            I'm going to try running it this html file console.
+        </p>
+        <p>
+            Yeah nothing happening. I'll have to come back to it. It's weird that it has us doing a function when we haven't looked at functions yet.
+        </p>
+    </section>
+
+    <section id="168">
+        <h2>168. Nesting Conditionals</h2>
+            <p>
+                We start with 
+                <blockquote>
+                    const password = prompt("please enter a new password");
+                </blockquote>
+                The password must be 6+ characters
+                <blockquote>
+                    if (password.length >= 6) {
+                        console.log("password is long enough!")
+                    } else {
+                        console.log("too short, password must be 6+ characters")
+                    }
+                </blockquote> 
+                let's put this into the js. file and see if it works. YEp, all works
+                <p>Next we want to make sure that the password does not include any spaces. I'm going to have to go over the indexOf as I don't really remember how to use it.</p>   
+                <blockquote>
+                    if (password.indexOf(` `) === -1 ){
+                        console.log("Double thumbs up")
+                    } else {
+                        console.log("password cannot contain spaces")
+                    }
+                </blockquote>
+                let's run this in the JS file and see what happens. Okay, brilliant, that works. HAppy days.
+            </p>
+            <p>
+                So what we have now is two totally seperate pieces of logic that each return a piece of feedback to the user. Usually we want to only return one piece of feedback to the user at a time. At the moment our feedback could be well done the password is long enough but then also say, you can't have any spaces.
+                WHAT WE want to happen is for the first if statement to run (check length) and then if that is okay then run the second statement. So we do this by nesting the if statement for spaces underneath the first if statement
+            </p>
+            <blockquote>
+               <br> if (password.length >= 6){
+               <br>         if (password.indexOf (" ") === -1){
+               <br>             console.log("valid Password")
+               <br>         } else {console.log("password cannot contain spaces")
+               <br>     }
+               <br> } else {
+               <br>     console.log("password too short")
+               <br> }
+            </blockquote>
+            Okay so that's pretty cool. If we pass the first if then it drops into the nested if statement. If we pass the second if statement then it prints but if it doesnt then it goes to the nested else and prints that. HOwever, If we don't pass the first if statement then it drops down to the else statement and prints that. cool. Let me try it in the JS file.
+            <p>Awesome, 
+                I got that to work and understand how it works. I need to practice writing these as I'm not really feeling fluent in it yet. 
+            </p>
+    </section>
+
+    <section id="ex24">
+        <h2>Excercise 24: Logical AND Mystery Excercise</h2>
+        <p>quite surprised, I managed to get this right the first time of trying. Really wasn't sure what I was looking at for a minute but then it clicked.</p>
+        <p>We have to change the value of num so that "you go me" is printed out. the const num was originally set to 0</p>
+        <blockquote>
+           <br>             // Change the value of num, so that "YOU GOT ME!" prints out
+           <br> const num = 102; // THIS IS THE ONLY LINE YOU SHOULD CHANGE :) 
+                   <br> 
+           <br> // DO NOT TOUCH ANYTHING BELOW (please) 
+           <br> if(num <= 100) {
+           <br>     if(num >= 50) {
+           <br>         console.log("HEY!");
+           <br>     }
+           <br> } else {
+           <br>     if (num < 103) {
+           <br>         if(num % 2 === 0){
+           <br>             console.log("YOU GOT ME!");
+           <br>         }
+           <br>     }
+           <br> }
+        </blockquote>
+    </section>
+
+    <section id="169">
+        <h2>169. Truthy and falsy Values</h2>
+        <p>
+            All JS values hava an inherent truthyness or falsyness about them
+        <ul>
+                <li>Falsy values</li>
+                <ul>
+                <li>false</li>
+                <li>0</li>
+                <li>"" (empty string)</li>
+                <li>null</li>
+                <li>undefined</li>
+                <li>NaN</li>
+                </ul>
+            <li>Everything else is truthy!</li>
+        </ul>
+        We start off with 
+        <blockquote>
+            const userInput = Prompt("enter something")
+        </blockquote>
+        If the user then doesn't enter anything then we will receive an empty string which is inherently falsy.
+        so then we can use the below. Note that if (userInput){} does not need to be compared to anything as we are simply asking is there userInput or not.  
+        <blockquote>
+            if(userInput){
+                 console.log("truthy")
+            } else {
+                console.log("falsy")
+            }
+        </blockquote>
+        let's try it in the script. OKay, it worked
+        Colt goes on to say that we know that the value of userInput is not true or false but what happens is we are coercing it into a boolean true or false state by asking is there userInput.
+        </p>
+        <p>finally in this part we tested some inherent true flase values with from the above list with </p>
+        <blockquote>
+            if(0){
+                console.log{"T"}
+            } else {
+                console.log("F")
+            }
+        </blockquote>
+        The above would return F as 0 is inherently false. Any other number would return T. What we are asking the computer to do is return a true when a value is false, which it won't do.
+    </section>
+
+    <section id="170">
+        <h2>Logical AND</h2>
+        <p>Oooh this is getting exciting! NOw we are covering logical operators, these are operators that allow us to combine different expressions. THis way we can combine more than one piece of logic together to form one larger piece of logic. There are three core logical operators built into JS and every other programming language. They are AND, OR and NOT. THese are represented by the characters &&, ||, !.
+            Now we are going to focus on &&(logical and). IN order for the entire thing to be considered true, the left and the right have to be considered true. </p>
+            <blockquote>
+                1 <= 4 && "1" === "a" ; <!-- true --> <br>
+                9 > 10 && 9 >= 9; <!--false-->
+                "abc" .length === 3 && 1+1 === 4; <!--false-->
+            </blockquote>
+        Okay cool so we now go back to the password example. We can combine our password statements regarding length and spaces in 
+        <blockquote>
+            // 170. Logical AND
+         <br>   const password = prompt("please enter a new password");
+        <br>
+         <br>   if (password.length >= 6 && password.indexOf (" ") === -1){
+         <br>        console.log("double thumbs up")
+         <br>   } else {
+         <br>       console.log("Password must be at least 6 characters and have no spaces");
+         <br>   }
+        </blockquote>
+        And this worked in the script    
+        <p>
+            Cool, let's go to the next seciton 
+        </p>
+    </section>
+
+    <section id="ex24">
+        <h2>Coding Excercise 24: Logical AND Mystery Excercise</h2>
+        <p>Okay, this is really cool. WE get</p> 
+        <blockquote>
+        <br>    const mystery = ''; //CHANGE THIS VALUE TO MAKE THE CONDITIONAL BELOW TRUE
+        <br>
+        <br>    // LEAVE THIS CODE ALONE! (pretty please)
+        <br>    if(mystery[0] === 'P' && mystery.length > 5 && mystery.indexOf('7') !== -1){
+        <br>        console.log("YOU GOT IT!!!");
+        <br>    }
+        </blockquote>
+        So we have to put something in for mystery that matches the rules below it. So the start of the mystery word that we create has to have a P in position 0, it's length must be greater than 5, and it must contain a number 7. Cool. So I put in Peoplearecool7 and it came back as right.  
+    </section>
+
+    <section id="171">
+        <h2>171. Logical OR</h2>
+        <p>This is signified by the || which are called pipes. So the OR statement is created by two pipes side by side ||</p> 
+        <p>The thing to remember here is that if one side is true, the entire thing is true
+        NExt we revisit the amusement park pricing system and use the && and || to update our system.
+        </p>
+        <p>So we start with the following code
+            <blockquote>
+            <br>    const age = 80;
+            <br>        
+            <br>    if (age < 5) {
+            <br>        console.log("free")
+            <br>    } else if(age < 10){
+            <br>        console.log("Child £10")
+            <br>    } else if (age < 65){
+            <br>        console.log("adult £20")
+            <br>    } else if (age > 65) {
+            <br>        console.log("Senior £10")
+            <br>    }
+            </blockquote>
+            So what we want to create is a set of rules that combine and give the same outcome. So age<5 and age>65.
+                Either side of this can be true but both cannot be true at the same time. An Age can be less than 5 or grater than 65 but a number cannot be both of these things at the same time.
+                So I've just been into the JS file and rewritten the amusement park pricing to the following
+                <blockquote>
+                <br>    // 171. Logical OR
+                <br>
+                <br>    // amusement park
+                <br>    
+                <br>    const age = -5;
+                <br>    
+                <br>    if (age < 5 && age > 0  || age > 65) {
+                <br>        console.log("free")
+                <br>    } else if(age > 5 && age < 10){
+                <br>        console.log("Child £10")
+                <br>    } else if (age > 10 && age < 65){
+                <br>        console.log("adult £20")
+                <br>    } else {
+                <br>        console.log("Please enter a valid age")
+                <br>    }
+                </blockquote> 
+        </p>
+        <p>
+            So the above we can read as if the age is less than 5 AND also more than 0 OR if the age is greater than 65
+            then print free
+        </p>
+        <p>
+            THe next line reads as else if the age is less than ten AND greater....OKay stop. I'm just reading through this code and realising how BAD it is. Si I've been into the JS file to try and sort it out. Here it is
+        </p>
+        <blockquote>
+     <br>       const age = 66;
+    <br>
+     <br>   if (age >= 0 && age < 5  || age >= 65) {
+     <br>       console.log("free")
+     <br>   } else if(age >= 5 && age < 10){
+     <br>       console.log("Child £10")
+     <br>   } else if (age >= 10 && age < 65){
+     <br>       console.log("adult £20")
+     <br>   } else {
+     <br>       console.log("Please enter a valid age")
+     <br>   }
+        </blockquote>
+        <p>
+            Okay, this makes way more sense now. Cool. LEt me watch the video and see how different his code is.
+            OKay I checked and it is exactly the same.
+        </p>
+        <p>Something he mentions at the end of the video. AND will always run before OR</p>
+    </section>
+
+    <section id="172">
+        <h2>Logical NOT</h2>
+        <p>
+            The final logical operator we are looking at is the NOT operator. !expression returns true if expression is false.
+        </p>
+        <ul>
+            <li>!null returns true</li>
+            <li>! (0 === 0 returns false</li>
+            <li>!3 (3 <= 4) returns false</li>
+        </ul>
+        <p>So basically what happens is this operates on the expression. If something is true it turns it false and vice versa. It negates the value. If we put the ! at the front of an expression then it will return true if something is false. 
+        </p>
+        <p>
+            We get an example of asking a user to enter a name. 
+            <blockquote>const firstName = prompt("Enter first name");</blockquote>
+            THen we could write the following 
+            <blockquote>
+           <br>     if (firstName === ""){
+           <br>         firstName = prompt("try again")
+           <br>     }
+            </blockquote> 
+            however we can be more concise by using 
+            <blockquote>
+            <br>    if (!firstName){
+            <br>        firstName = prompt("try again")
+            <br>    }
+            </blockquote>
+            Let's go to the JS file and try it out.
+              COol that works. Next we have an example from the amusement park pricing
+        </p>
+        <p>
+            So next he takes a statement from the other amusement code
+            <blockquote>
+              <br>  if (age >= 0 && age < 5  || age >= 65) {
+                    <br>       console.log("free")
+            </blockquote>
+            The above will print out only if someone is between the age of 0 and 5 or over 65
+        </p>
+        <p>The below will only print out if someone is between 5 and 65</p>
+        <blockquote>
+            <br>  if (!(age >= 0 && age < 5  || age >= 65)) {
+                <br>       console.log("You're an adult")
+        </blockquote>
+        <p>So the ! turns finding someone who is free into finding the reverse, an adult who is paying.</p>
+    </section>
+
+    <section id="173">
+        <h2>173. The Switch Statement is...A Lot</h2>
+        <p>
+            The Switch statement is another control-flow statement that can replace multiple if statements. 
+        </p>
+        We start out using 
+        <blockquote>
+            const day = 1;
+
+<br>        if (day === 1) {
+<br>            console.log("monday")
+<br>        } else if (day === 2) {
+<br>            console.log("tues")
+<br>        } else if (day === 3) {
+<br>            console.log("wed")
+<br>        } else if (day === 4) {
+<br>            console.log("THUR")
+<br>        } else if (day === 5) {
+<br>            console.log("fri")
+<br>        } else {
+<br>            console.log("It's the weekend")
+<br>        }
+        </blockquote>
+        which we then turn into a switch statement with
+        <blockquote>
+       <br>     const sday = 34;
+    <br>        switch(sday) {
+    <br>            case 1:
+    <br>                console.log("monday");
+    <br>                break;
+    <br>        case 2:
+    <br>                console.log("Tue")
+    <br>                break;
+    <br>        case 3:
+    <br>                console.log("wed")
+    <br>                break;
+    <br>        case 4:
+    <br>                console.log("thur")
+    <br>                break;
+    <br>        case 5:
+    <br>                console.log("frid")
+    <br>                break;
+     <br>           default:
+    <br>                console.log("Weekend")
+    <br>        }  
+    <br>    </blockquote>
+    <p>
+        Colt says he doesn't like the switch statement. Personally I quite like it. 
+        Anyway, that's the end of this section. It's taken me several days of work so happy to have gotten through it.  Thankfully I've learnt a lot and found it very interesting.
+    </p>
+    </section>
+
+    <script src="section16.js"></script>
+</body>
+</html>
