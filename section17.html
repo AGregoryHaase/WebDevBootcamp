@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 17: JavaScript Arrays</title>
+</head>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <section>
+        <h2>contents</h2>
+        <p>
+            <ul>
+                <li><a href="#174">174. What Matters in this Section</a></li>
+                <li><a href="#175">175. Introducing Arrays</a></li>
+                <li><a href="#175">Ex25: Coding Excercise 25: Lotto Numbers Excercise</a> </li>
+                <li><a href="#176">Array Random Access</a></li>
+                <li><a href="#ex26">Coding Excercise 26: Array Access Excercise</a></li>
+                <li><a href="#177">177.Push &amp; Pop</a></li>
+                <li><a href="#178">178. Shift &amp; Unshift</a></li>
+                <li><a href="#ex27">Coding Excercise 27: Push/Pop?Shift/Unshift Practice</a></li>
+                <li><a href="#179">179. Concat, indexOf, includes &amp; reverse</a></li>
+                <li><a href="#180">180. Slice &amp; Splice</a></li>
+                <li><a href="#181">181. Reference Types &amp; Equality Testing</a></li>
+                <li><a href="#182">182. Arrays + Const</a></li>
+                <li><a href="#183">183. Multi-Dimensional Arrays</a></li>
+                <li><a href="#ex28">Coding Excercise 28: Nested Arrays Excercise</a></li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="174">
+        <h2>What matters in this section</h2>
+        <p>
+            Colt says that a he sees a lot of students stumble in this section. Let's hope we can get through it fairly unscathed and with as little 
+            time loss as possible. 
+        </p>
+        <p>he goes on to say that Arrays area data structure that allows us to store multiple values together in one variable
+            He says it's the next level. WE are levelling up.  
+        </p>
+        <ul><h4>crucial</h4>
+            <li>Array Basics - CREATING and Updating</li>
+            <li>Push &amp; Pop</li> 
+            <li>Shift &amp; Unshift</li>
+            <h4>important</h4>
+            <li>Concat, IndexOf</li>
+            <li>Slice &amp; Splice</li>
+            <li>Multi-Dimensional Arrays</li>
+        </ul>
+    </section>
+
+    <section id="175">
+        <h2>Introducing Arrays: Our first Data Structure</h2>
+        <p>
+            A collection of data. So far we have seen little tiny different pieces of data. He start with the Beatles. 
+            He says we can have the each as a seperate piece of information as const bassist = `Paul` etc. 
+            Or we could store all four members of the group in a single array. So what is an array?
+            <ul><h3>Arrays: Ordered collections of values</h3>
+            <li>LIST OF COMMENTS ON IG POST</li>
+            <li>Collection of levels in a game</li>
+            <li>Songs on a playlist</li>
+            </ul>
+            He uses a pillbox as an analogy. He talks about next door?
+        </p>
+        <p><Em>Creating Arrays</Em> <br>
+        To make an empty array <blockquote>let students = []</blockquote>
+        an array of strings <blockquote>let colors = [`red`, `orange`, `yellow`];</blockquote>
+        an arraay of numbers <blockquote>let lottoNums = [14, 44, 54, 23, 66];</blockquote>
+        a mixed array <blockquote>let stuff = [true, 68, `cat`, null]</blockquote>
+        </p>
+    </section>
+
+    <section id="ex25">
+        This was quite basic
+    </section>
+
+    <section id="176">
+        <h2>176. Array Random Access</h2>
+        <p>
+            <em>ARRAYS ARE INDEXED</em>
+            Each element has a corresponding index (counting starts at 0). If we had a hypothetical array of the seven dwarfes 
+            <blockquote>let dwarves = [`DOC`, `DOPEY`, `BASHFUL`, `GRUMPY`, `SNEEZY`, `SLEEPY`, `HAPPY`]</blockquote>
+            Then doc would have an index of 0 and happy an index of 6.
+        </p>
+        <p>
+            we have to remember that the max length is always one longer than the index. Index starts at 0 but length starts on 1. 
+            So just like we can request specific elements in a string using 
+            <blockquote>
+                "findthe4thletter"[4] <br>
+                't'
+            </blockquote> to find the 4th letter of a string 
+            So we do the exact same thing for an array. In my console at the moment I have inputted
+            <blockquote>
+                let days = ["mon", "tue", "wed", "thu"]; <br>
+            </blockquote>
+            so we can now recall the days array by simply typing days into the console. It brings up the following.
+            <blockquote>
+        <br>    days
+        <br>    (4) ['mon', 'tue', 'wed', 'thu']
+        <br>    0: "mon"
+        <br>    1: "tue"
+        <br>    2: "wed"
+        <br>    3: "thu"
+        <br>    length: 4
+        <br>    [[Prototype]]: Array(0)
+        </blockquote>
+        We can find the length of the array (I know it says it at the bottom of the array list) by typing 
+        <blockquote>days.length</blockquote>and we can find which day takes up the zeroeth position by typing 
+        <blockquote>days[0]</blockquote> which returns <blockquote>'mon'</blockquote>
+        If we try and put in a value that isn't there then we will get undefined.
+        </p>
+        <p>   If we enter into an array using <blockquote>days[0][1]</blockquote>
+            then we will get the letter <blockquote>o</blockquote> This is because we are selecting the zeroeth day and the 2nd letter of
+            that day, That day being monday and, with the letter count starting from zero we have the 0 = m 1 = o.
+        </p>
+        <h3>modifying arrays</h3>
+        <p>
+            Let's say we make a mistake with a spelling somwhere in an array. 
+            The example we are given is 
+            <blockquote>
+                let colors = ['rad', 'orange', 'green', 'yelloww'] <br>
+                colors[0] = 'red';
+            </blockquote>
+            Right, I've just done it in the console so here it is
+            <blockquote>
+            <br>    let colors = ['rad', 'yallow', 'bluu'];
+            <br>    undefined
+            <br>    colors
+            <br>    (3) ['rad', 'yallow', 'bluu']
+            <br>    colors[0] = 'red';
+            <br>    'red'
+            <br>    colors[1] = 'yellow';
+            <br>    'yellow'
+            <br>    colors[2] = 'blue';
+            <br>    'blue'
+            </blockquote>
+            and now 
+            <blockquote>
+            <br>    colors
+            <br>    (3) ['red', 'yellow', 'blue']
+            <br>    0: "red"
+            <br>    1: "yellow"
+            <br>    2: "blue"
+            <br>    length: 3
+            <br>    [[Prototype]]: Array(0)
+            </blockquote>
+            So we quite easily changed the spellings of each element of an array there. I'm not sure if it's an element in an array. Let me find out.
+            Ah, yes, I was right to call it an element. 
+            this is from wiki
+            <blockquote>
+                In computer science, an array type is a data type that represents a collection of elements 
+                (values or variables), each selected by one or more indices (identifying keys) that can be computed at 
+                run time during program execution. Such a collection is usually called an array variable, array value, 
+                or simply array.
+            </blockquote>
+
+            OKay, so this is quite interesting. If you add a data element to an array in block [10] and so far the array length is on [3]
+            like the color array above, then the array will assign empty and undefined element blocks in between. for example
+            <blockquote>
+            <br>    colors
+            <br>    (11) ['rad', 'yallow', 'bluu', empty × 7, 'indigo']
+            <br>    0: "rad"
+            <br>    1: "yallow"
+            <br>    2: "bluu"
+            <br>    10: "indigo"
+            <br>    length: 11
+            <br>    [[Prototype]]: Array(0)
+            </blockquote>
+            also, I realised that changing the spellings in the array didn't make permanent changes to the array. TO make them permanent 
+            I ran the changes and then ran 
+            <blockquote>let colors = colors;</blockquote> 
+        </p>
+    </section>
+
+    <section id="ex26">
+        <h2>Coding Excercise 26: Array Access Excercise</h2>
+      <blockquote>
+        <br>  const leaderboard = ['Harry', 'Lua', 'Hermione', 'Bellatrix']; //DON'T TOUCH THIS LINE!
+      <br>  leaderboard[1] = 'Luna'; 
+      <br>  leaderboard[3] = 'Draco';
+      <br>  // YOUR CODE BELOW HERE:
+        </blockquote>
+        <p>
+            Okay, managed to do that quite easily. I did try and do it all on one line. Must be a way to do that on one line?
+        </p>
+    </section>
+
+    <section id="177">
+        <h2>177.Push &amp; Pop </h2>
+        <p>
+            Right, so we have learnt the basics - how to create an array, access elements using an index, modify elements using an index,
+            we can use the length property. It's time to move on to some of the built in array methods. If you rememebr for strings, you type in the string and then a . and it brings up a drop down 
+            of lots of different options. Wow, there's a lot.
+        </p>
+        <p>
+            So now we move on to some of the built in array methods. The set of methods is different. 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">GO to the MDN docs for standard built in objects and click on Array for a list of methods.</a> 
+            Not quite sure why he went to the array doc then clicked back and then clicked array again?
+            <ul>
+                <li>Push - add to end</li>
+                <li>Pop - remove from end</li>
+                <li>Shift - remove from start</li>
+                <li>Unshift - add to start</li>
+                <li>concat - merge arrays</li>
+                <li>includes - look for a value</li>
+                <li>indexOf - just like string.indexOf</li>
+                <li>join - creates a string from an array</li>
+                <li>reverse - reverses an array</li>
+                <li>slice - copies a portion on an array</li>
+                <li>splice - removes/replaces and array</li>
+                <li>sort - sorts an array</li>
+            </ul>
+            <h3>Push &amp; Pop</h3>
+            Push and Pop allow us to add and remove from the end of an array. OFten we will have an ordered list 
+            in an array and we want to maintain the order of the list so we add to the end. Imagine a line of people waiting to 
+            get into a movie is the example given. 
+            <h4>push</h4>
+            <blockquote>
+                let movieLine = ['allan', 'john'] <br>
+            </blockquote>
+            Previously we added something to this list with
+            <blockquote>
+                movieLine[2] = 'bob'
+            </blockquote>
+            However, finding out the number of the new element is an extra step that we can miss out with
+            <blockquote>
+                movieLine.push('bob')
+            </blockquote>
+            This automatically puts the new element to the next empty element space. It looks likt this in this in the 
+            console
+            <blockquote>
+                let movieLine = ['allan', 'bob'];
+            <br>    undefined
+            <br>    movieLine
+            <br>    (2) ['allan', 'bob']
+            <br>    movieLine[2] = 'john';
+            <br>    'john'
+            <br>    movieLine
+            <br>    (3) ['allan', 'bob', 'john']
+            <br>    movieLine.push('Tony');
+            <br>    4
+            <br>    movieLine
+            <br>    (4) ['allan', 'bob', 'john', 'Tony']
+            </blockquote>
+            we can also add multiple elements with 
+            <blockquote>movieLine.push('peter', 'andy')</blockquote>
+            </p>
+            <p>
+                <h4>pop</h4>
+                Pop allows us to remove an element from the end.
+                <blockquote>
+                    movieLine.pop()
+                </blockquote>
+                removes the last element of the array. It will return the value to us and remove it from the array. We don't need any arguments 
+                passed through the parentheses.
+                <blockquote>
+                    movie
+                <br>    (2) ['tom', 'nancy']0: "tom"length: 1[[Prototype]]: Array(0)
+                <br>    movie.pop()
+                <br>    'nancy'
+                <br>    movie
+                <br>    ['tom']
+                </blockquote>
+                We can capture this in a variable 
+                <blockquote>
+                    movie
+                <br>    ['tom']
+                <br>    movie.push('tom', 'adam', 'gary')
+                <br>    4
+                <br>    let peopleEliminated = movie.pop();
+                <br>    undefined
+                <br>    peopleEliminated
+                <br>    'gary'
+                <br>    movie
+                <br>    (3) ['tom', 'tom', 'adam']
+                </blockquote>
+                We can see now that gary has it's own variable in "peopleEliminated".
+                I've accidentally added tom twice when i meant to add tony
+                <blockquote>
+                    movie
+                <br>    (3) ['tom', 'tom', 'adam']0: "tom"1: "tom"2: "adam"length: 3[[Prototype]]: Array(0)
+                <br>    movie[1] = 'tony';
+                <br>    'tony'
+                <br>    movie
+                <br>    (3) ['tom', 'tony', 'adam']
+                </blockquote>
+            </p>
+            <p>
+                Another example used is a barbell. It's fairly self explanatory.
+            </p>
+    </section>
+
+    <section id="178">
+        <h2>Shift &amp; Unshift</h2>
+        <p>
+            <h3>array.shift</h3>
+            Shift does the opposite of pop in that it removes an element from the front of an array.
+            <blockquote>
+                movie
+            <br>    (4) ['nancy', 'tom', 'adam', 'gary']0: "tom"1: "adam"2: "gary"length: 3[[Prototype]]: Array(0)
+            <br>    movie.shift()
+            <br>    'nancy'
+            <br>     movie
+            <br>     (3) ['tom', 'adam', 'gary']
+            </blockquote>
+            As can be seen, using .shift has removed nancy from the array. Repeating...
+            <blockquote>
+                movie.shift()
+            <br>    'tom'
+            <br>    movie.shift()
+            <br>    'adam'
+            <br>    movie.shift()
+            <br>    'gary'
+            <br>    movie.shift()
+            <br>    undefined
+            </blockquote>
+        </p>
+        <p>
+            <h3>array.unshift</h3>
+            Unshift is the reverse of shift in that it places an element in the 0 position. 
+        </p>
+        <blockquote>
+            movie.push('tom', 'adam', 'gary')
+         <br>   3
+         <br>   movie
+         <br>   (3) ['tom', 'adam', 'gary']
+         <br>   movie.unshift('Ant')
+         <br>   4
+         <br>   movie
+         <br>   (4) ['Ant', 'tom', 'adam', 'gary']
+        </blockquote>
+        <p>
+            Colt says these are actually stacks and ques and we've done them without using the terminology
+        </p>
+    </section>
+
+    <section id="ex27">
+        <h2>Coding Excercise 27: Push/Pop/Shift/Unshift</h2>
+        <p>
+            <blockquote>
+             <br>   const planets = ['The Moon','Venus', 'Earth', 'Mars', 'Jupiter']; //DO NOT TOUCH THIS LINE!
+             <br>
+             <br>   // YOUR CODE GOES BELOW THIS LINE:
+             <br>   planets.shift();
+             <br>   planets.push('Saturn');
+             <br>   planets.unshift('Mercury');
+            </blockquote>
+            Quite chuffed to have got it right straight away.
+        </p>
+    </section>
+
+    <section id="179">
+        <h2>179. Concat, indexOf, includes &amp; reverse</h2>
+        <p>
+            <h3>array.concat</h3>
+            array.concat, okay, seems pretty simple, just read the mdn docs and made this in the console.
+            <blockquote>
+                const array1 = ['1','2']
+            <br>    undefined
+            <br>    const array2 = ['3','4']
+            <br>    undefined
+            <br>    const array3 = array1.concat(array2);
+            <br>    undefined
+            <br>    array3
+            <br>    (4) ['1', '2', '3', '4']
+            </blockquote>
+        </p>
+        <p>
+            <h4>array.includes</h4>
+            'includes' is an example of a boolean method which means it returns true or false. 
+            Here's an example of an array and then using 'includes'.
+            <blockquote>
+            <br>    let testing = [5, 3, 5, 6];
+            <br>    undefined
+            <br>    testing
+            <br>    (4) [5, 3, 5, 6]
+            <br>    let testing1 = ['SDADS', 'ASDFADF', 'ASDF'];
+            <br>    undefined
+            <br>    testing1
+            <br>    (3) ['SDADS', 'ASDFADF', 'ASDF']
+            <br>    let testcon = testing.concat(testing1)
+            <br>    undefined
+            <br>    testcon
+            <br>    (7) [5, 3, 5, 6, 'SDADS', 'ASDFADF', 'ASDF']
+            <br>    let testcon = testcon.concat(testing)
+            <br>    undefined
+            <br>    testcon
+            <br>    (11) [5, 3, 5, 6, 'SDADS', 'ASDFADF', 'ASDF', 5, 3, 5, 6]
+            <br>    testcon.includes('hello')
+          <br>  false
+          <br>  testcon.includes(3)
+          <br>  true
+          </blockquote>
+        </p>
+
+        <p>
+            <h3>array.indexOf</h3>
+            Works in a similar way to indexOf for strings. here's one I did in the console.
+            <blockquote>
+             <br>   let yes = ['aav','asdc','fvs','ndy'];
+             <br>   undefined
+             <br>   yes   
+             <br>   (4) ['aav', 'asdc', 'fvs', 'ndy']
+             <br>   yes.indexOf('fvs')
+             <br>   2
+            </blockquote>
+            Note that if the .indexOf returns -1 then it means the element is non existant.
+            Also note that it only returns the first match and gives the index.
+        </p>
+        <p>
+            <h4>array.reverse</h4>
+            This works by reversing the order. it is destructive and will change the original
+        <blockquote>
+        <br>    let test = ['aaaa', 'bbbbbb', 'cccccc', 'ddddddd'];
+        <br>    undefined
+        <br>    test.reverse()
+        <br>    (4) ['ddddddd', 'cccccc', 'bbbbbb', 'aaaa']
+        <br>    test
+        <br>    (4) ['ddddddd', 'cccccc', 'bbbbbb', 'aaaa']
+        </blockquote>
+        
+        </p>
+
+    </section>
+
+    <section id="180">
+        <h2>180. Slice &amp; Splice</h2>
+        <p>
+            <h4>array.slice</h4>
+            OKay, fairly simple
+            <blockquote>    
+                test
+             <br>   (4) ['ddddddd', 'cccccc', 'bbbbbb', 'aaaa']
+             <br>   test.slice(2,4)
+             <br>   (2) ['bbbbbb', 'aaaa']
+             <br>   test.slice(0,3)
+             <br>   (3) ['ddddddd', 'cccccc', 'bbbbbb']
+            </blockquote>
+            Note, that you can use a negative index. so if you want the last three you can use
+            <blockquote>
+                    test.slice(-3)
+              <br>  (3) ['cccccc', 'bbbbbb', 'aaaa']
+            </blockquote>
+        </p>
+
+        <p>
+            <h4>array.splice</h4>
+            <blockquote>
+            </blockquote>
+            To remove 
+            <blockquote>
+                test
+                <br>    (4) ['ddddddd', 'cccccc', 'bbbbbb', 'aaaa']
+                <br>    test.splice(1, 2);
+                <br>    (2) ['cccccc', 'bbbbbb']
+                <br>    test
+                <br>    (2) ['ddddddd', 'aaaa']
+            </blockquote>
+            to add
+            <blockquote>
+                <br>    test
+                <br>    (2) ['ddddddd', 'aaaa']
+                <br>    test.splice(1, 0, 'inserted with splice');
+                <br>    []
+                <br>    test
+                <br>    (3) ['ddddddd', 'inserted with splice', 'aaaa']
+            </blockquote>
+            to remove multiple elements
+            It's important to note the syntax here. The parentheses after .splice() goes in this order 
+            (<em>start position</em>,<em>number amount to splice out</em>, <em>'items to splice in'</em> )
+            below I've used the splice to remove and add a few things
+            <blockquote>
+                days.splice(1,2, 'test');
+            <br>    (2) ['tue', 'wed']
+            <br>    days.splice(1, 0, 'tues', 'weds');
+            <br>    []
+            <br>    days
+            <br>    (8) ['mon', 'tues', 'weds', 'test', 'thu', 'fri', 'sat', 'sun']
+            <br>    days.splice(3,1);
+            <br>    ['test']
+            <br>    days
+            <br>    (7) ['mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun']
+            </blockquote>
+            above I've actually missed a line to show the days array after the initial splice. It would have read
+            days [mon, test, thu, fri, sat, sun]
+        </p>
+        <p>Here's some more messing about</p>
+        <blockquote>
+            days
+        <br>    (7) ['mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun']
+        <br>    days.splice(0,0,'days of the week', 7,0, 'end');
+        <br>    []
+        <br>    days
+        <br>    (11) ['days of the week', 7, 0, 'end', 'mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun']
+        <br>    days(1,2)
+        <br>    VM7036:1 Uncaught TypeError: days is not a function
+        <br>        at <anonymous>:1:1
+        <br>    (anonymous) @ VM7036:1
+        <br>    days.splice(1,2);
+        <br>    (2) [7, 0]
+        <br>    days
+        <br>    (9) ['days of the week', 'end', 'mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun']
+        <br>    days.splice(1,1)
+        <br>    ['end']
+        <br>    days
+        <br>    (8) ['days of the week', 'mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun']
+        <br>    days.splice(8,0, 'add1', 'add2', 'add3');
+        <br>    []
+        <br>    days
+        <br>    (11) ['days of the week', 'mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun', 'add1', 'add2', 'add3']
+        </blockquote>   
+        <p>
+            <h4>array.sort</h4>
+              Colt starts off by saying sort is a bit useless atm because we don't yet know how to use function.
+              He then goes on to say that right now if we use .sort, it will convert everything to to string values     
+              and then compare their underlying UTF 16 code unit values for each string. Even if there is an array of all numbers it converts to strings. 
+              Here's our days array .sorted
+              <blockquote>
+                days
+            <br>    (11) ['days of the week', 'mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun', 'add1', 'add2', 'add3']
+            <br>    days.push(234,2234,2345,54,543);
+            <br>    16
+            <br>    days
+            <br>    (16) ['days of the week', 'mon', 'tues', 'weds', 'thu', 'fri', 'sat', 'sun', 'add1', 'add2', 'add3', 234, 2234, 2345, 54, 543]
+            <br>    days.sort();
+            <br>    (16) [2234, 234, 2345, 54, 543, 'add1', 'add2', 'add3', 'days of the week', 'fri', 'mon', 'sat', 'sun', 'thu', 'tues', 'weds']
+              </blockquote>
+              what we should notice is that the default sort works only on the first character of the string. 
+              It works first on numbers going from - to +. I've added some new numbers to the days array as an example. 
+              <blockquote>
+                days.sort();
+            <br>    (21) [-1, -5, 1, 13333, 2, 2234, 234, 2345, 54, 543, 'add1', 'add2', 'add3', 'days of the week', 'fri', 'mon', 'sat', 'sun', 'thu', 'tues', 'weds']
+              </blockquote>
+              above you can see that position  of the numbers depends initially on the negative quality of the number and then the number itself. 
+              We can also see that only the first number is taken into account. Therefore the number 13333 comes before the number 2. 
+              It works in the same way with words in that it looks only at the first letter and arranges according to that.
+              We will move onto move advances sort methods.
+        </p>
+    </section>
+
+    <section id="181">
+        <h2>181. Reference Types &amp; Equality Testing</h2>
+        <p>
+            OKay so we start off with Colt saying we need to talk about == and ===. 
+            So I've watched this through once already and I think I get it. Let me see if I can recall. 
+            Right, so if we go to the console 
+            <blockquote>    
+            <br>    [1] == [1]
+            <br>    false
+            <br>    [1] === [1]
+            <br>    false
+            <br>    let mem = [123];
+            <br>    undefined
+            <br>    mem
+            <br>    [123]
+            <br>    [123] === [123]
+            <br>    false
+            <br>    mem == [123]
+            <br>    false
+            <br>    mem
+            <br>    [123]
+            <br>    let mem2 = mem
+            <br>    undefined
+            <br>    mem
+            <br>    [123]
+            <br>    mem2
+            <br>    [123]
+            <br>    mem.push(1234);
+            <br>    2
+            <br>    mem
+            <br>    (2) [123, 1234]
+            <br>    mem2
+            <br>    (2) [123, 1234]
+            <br>    mem === mem2
+            <br>    true
+            </blockquote>
+            As you can see [1] === [1] returns false. That's because when we create an array, we are creating a specific 
+            memory of the array with it's own identification reference or address. So [1] and [1] are seperate chunks of memory and are therefore
+            not the same. You can also see that we create an array called mem. We give it a value. We also create an
+            array called mem2 and link it to mem. When we change mem it also changes mem2 and vice versa, shown below.
+            <blockquote>
+            <br>    mem === mem2
+            <br>    true
+            <br>    mem2.push(123);
+            <br>    3
+            <br>    mem
+            <br>    (3) [123, 1234, 123]
+            </blockquote>
+        </p>
+    </section>
+
+    <section id="182">
+        <h2>182. Arrays + Const</h2>
+        <p>
+            Okay I'm not quite getting this. What Colt is saying, very specifically, is that I can't create a const value
+            and then add to it using the += method. However, when I use the console I do seem to be able to reasign 
+            the value by just rewriting it from const a = 12345 to const a = 123. 
+            <blockquote>
+                    a
+            <br>    '12345'
+            <br>    const a = 123
+            <br>    undefined
+            <br>    a
+            <br>    123
+            </blockquote>
+            however
+            <blockquote>
+                    a += 1
+            <br>    VM9629:1 Uncaught TypeError: Assignment to constant variable.
+            <br>    at <anonymous>:1:3
+            </blockquote>
+            So as we talked about earlier when we have an array with a const value, we have an address for that piece of 
+            information.
+            When we use an const array we can still change the values inside the array using the push, pop etc methods. WE can't do that with 
+            a const primitive value.
+            OKay, got it
+            So 
+            <blockquote>
+                    const a = [123]
+            <br>    undefined
+            <br>    a
+            <br>    [123]
+            <br>    a += 1
+            <br>    VM9706:1 Uncaught TypeError: Assignment to constant variable.
+            <br>        at <anonymous>:1:3
+            <br>    (anonymous) @ VM9706:1
+            <br>    a = [1234]
+            <br>    VM9731:1 Uncaught TypeError: Assignment to constant variable.
+            <br>        at <anonymous>:1:3
+            <br>    (anonymous) @ VM9731:1
+            <br>    a.push(4)
+            <br>    2
+            <br>    a
+            <br>    (2) [123, 4]
+            <br>    const a = 1234
+            <br>    undefined
+            <br>    a
+            <br>    1234
+            <br>    a.push(4)
+            <br>    VM9845:1 Uncaught TypeError: a.push is not a function
+            <br>        at <anonymous>:1:3
+            <br>    (anonymous) @ VM9845:1
+            </blockquote>
+            So as you can see above, a .push will work on an array but it won't work on a primitive.
+        </p>
+    </section>
+
+    <section id="183">
+        <h2>182. Multi-Dimensional Arrays</h2>
+        <p>
+            Arrays can store whatever we want. THey can store primatives like strings and numbers and booleans, null and undefined,
+            They can also store other arrays. Here is a tictactoe board
+            <blockquote>    
+            <br>    const board = [
+            <br>    ['x','o', null],
+            <br>    [null, 'x', 'o'],
+            <br>    ['o', 'x', null]
+            <br>    ]
+            <br>    undefined
+            <br>    board
+            <br>    (3) [Array(3), Array(3), Array(3)]
+            <br>    0: (3) ['x', 'o', null]
+            <br>    1: (3) [null, 'x', 'o']
+            <br>    2: (3) ['o', 'x', null]
+            <br>    length: 3
+            <br>    [[Prototype]]: Array(0)
+            </blockquote>
+            Remember that we can also find the index of elements inside of an array
+        <blockquote>
+            board
+        <br>    (3) [Array(3), Array(3), Array(3)]0: (3) ['x', 'o', null]1: (3) [null, 'x', 'o']2: (3) ['o', 'x', null]length: 3[[Prototype]]: Array(0)
+        <br>    board[1][1]
+        <br>    'x'
+        <br>    board[1][2]
+        <br>    'o'
+        <br>    board[2][2]
+        <br>    null
+        <br>    board[0][2]
+        <br>    null
+        </blockquote>
+        </p>
+       
+    </section>
+    
+    <section id="ex28">
+        <h2>Coding Excercise 28: Nested Arrays Excercise</h2>
+        <p>
+            OKay, so we are given an array and we have to replace the null value in position 1 of array 3. See below for the solution
+            <blockquote>
+        <br>     airplaneSeats
+        <br>    (5) [Array(3), Array(3), Array(3), Array(3), Array(3)]
+        <br>    0: (3) ['Ruth', 'Anthony', 'Stevie']
+        <br>    1: (3) ['Amelia', 'Pedro', 'Maya']
+        <br>    2: (3) ['Xavier', 'Ananya', 'Luis']
+        <br>    3: Array(3)
+        <br>    0: "Luke"
+        <br>    1: null
+        <br>    2: "Deniz"
+        <br>    length: 3
+        <br>    [[Prototype]]: Array(0)
+        <br>    4: (3) ['Rin', 'Sakura', 'Francisco']
+        <br>    length: 5
+        <br>    [[Prototype]]: Array(0)
+        <br>
+        <br>    airplaneSeats[3][1] = 'Hugo'
+        <br>    'Hugo'
+        <br>
+        <br>    airplaneSeats
+        <br>    (5) [Array(3), Array(3), Array(3), Array(3), Array(3)]
+        <br>    0: (3) ['Ruth', 'Anthony', 'Stevie']
+        <br>    1: (3) ['Amelia', 'Pedro', 'Maya']
+        <br>    2: (3) ['Xavier', 'Ananya', 'Luis']
+        <br>    3: Array(3)
+        <br>    0: "Luke"
+        <br>    1: "Hugo"
+        <br>    2: "Deniz"
+        <br>    length: 3
+        <br>    [[Prototype]]: Array(0)
+        <br>    4: (3) ['Rin', 'Sakura', 'Francisco']
+        <br>    length: 5
+        <br>    [[Prototype]]: Array(0)
+        <br>    </blockquote>
+        </p>
+
+        <p>
+            
+            OKay, this last part of this section. It's been a good one. My last commit to github was 3 days ago on 21st of MArch
+            So this section has taken me 3 days. Phew. It's all clicked and I didn't really feel stuck or stumped on any of it so I'm quite chuffed about that. 
+            Right, onto the next one!
+        </p>
+    </section>
+    <script src="section17.js"></script>
+</body>
+</html>
