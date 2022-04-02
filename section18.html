@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+</head>
+<body>
+    <h1>JavaScript Object literals. Section 18.</h1>
+
+    <section>
+        <h2>Contents</h2>
+        <p>
+            <ul>
+                <li><a href="#184">184. What Matters in This Section</a></li>
+                <li><a href="#185">185. Introducing Object Literals</a></li>
+                <li><a href="#186">186. Creating Object Literals</a></li>
+                <li><a href="ex29">Coding Excercise 29: Our First Object Excercise</a></li>
+                <li><a href="187">187. Accessing Data Out Of Objects</a></li>
+                <li><a href="ex30">Coding Excercise 30: Object Access Excercise</a></li>
+                <li><a href="#188">188. Modifying Objects</a></li>
+                <li><a href="189">189. Nesting Arrays &amp; Objects</a></li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="184">
+        <h2>184. What Matters In this Section</h2>
+        <p>
+            <ul><h6>Crucial</h6>
+                <li>Creating and Working With Object Literals</li>
+                <li>Nesting Arrays and Objects</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="185">
+        <h2>185. Introducing Object Literals</h2>
+        <p>
+            JS Objects. Our second data structure. 
+            UNlike arrays which is about ordering data ie a 1st, a 2nd, a 3rd.
+            With objects our data is stored using key value pairs/properties.
+            A property is just two pieces of information and then a <em>key</em>  and then a <em>value</em> , and they form a <em>pair</em> . 
+            An <em>object</em> is just a bunch of these pairs.
+            <ul>
+                <li>Objects are collections of properties</li>
+                <li>Properties are a key-value pair</li>
+                <li>Rather than accessing data using an index, we use custom keys</li>
+            </ul>
+        So remember 
+        <blockquote>    
+            PROPERTY = KEY + VALUE
+        </blockquote>
+        We use the key to get the data back out. 
+        example of key-value pairs
+        <blockquote>
+            KEY-VALUE pairs
+            <br> username: -    'crazyCatLady'
+            <br> upvotes -       7
+            <br> text -         'great post'
+        </blockquote>
+        Right then, I've tried to use the console for this but it doesn't seem to work. 
+        Anyway, I've copied it below. The left hand element is the key and the right hand side is a value, together they make 
+        a properties. Each one is a pair so there are 5 pairs of information and they are all floating around inside the one shared object
+        and we stored it in a variable called fitBitData.
+        Note that you can have different types of values in an object, similar to an array, however unlike an array which is ordered, there is no need to order an 
+        object literal. All that matters is what we store that value under i.e. what is the name of the key.
+        <blockquote>
+        <br>    fitBitData
+        <br>    {TotalSteps: 74839, TotalMiles: 283, avgCalorieBurn: 34934, workoutsThisWeek: '5 of 7', avgGoodSleep: '2:13'}
+        <br>    const fitBitData = {
+        <br>    TotalSteps       : 74839,
+        <br>    TotalMiles       : 283,
+        <br>    avgCalorieBurn   : 34934,
+        <br>    workoutsThisWeek : '5 of 7',
+        <br>    avgGoodSleep     : '2:13' };
+        <br>    undefined
+        <br>
+        <br>    fitBitData.TotalSteps
+        <br>    74839
+        </blockquote>
+        </p>
+    </section>
+
+    <section id="186">
+        <h2>186. Creating Object Literals</h2>
+        <p>
+            THe term object in JS is a bit of a loaded term. When we do typeof[] we get "object".
+            From now on when we say Object literal we are refering to these key vlaue pair data stores, this data structure, that we create using 
+            curly braces. 
+            Here we are going to model a person. THink of the 
+            below creates an empty object. Note, objects are also reference types. Rememeber there are primitve types 
+            such as numbers strings booleans, undefined, null, or symbol.
+            If it is anything else then it's a reference value (i.e. typeof object)
+            empty object
+            <blockquote>
+                const person = {}
+            </blockquote>
+            <blockquote>
+                const person = {firstName: 'Mick', lastName: 'Jagger'}
+            </blockquote>
+            So above we now have two value pairs. Each pair is a key, a colon, and then a value, seperated by commas. 
+            Doing it on seperate lines for longer objects makes it easier to read. 
+        </p>
+        <p>
+            From the console, 
+            <blockquote>
+            <br>  const person = {firstName: 'Mick', lastName: 'Jagger'};
+            <br>    undefined
+            <br>    person
+            <br>    {firstName: 'Mick', lastName: 'Jagger'}
+            <br>    firstName: "Mick"
+            <br>    lastName: "Jagger"
+            <br>    [[Prototype]]: Object
+            </blockquote>
+        </p>
+    </section>
+ 
+    <section id="ex29">
+        <h2>Coding Excercise 29: Our First Object Excercise</h2>
+        <p>
+            quite chuffed, passed first time of trying, no mistakes. 
+            Had to define a new object literal variable with the following properties
+            <blockquote>
+                const product = {
+                <br>    name:"Gummy Bears", 
+                <br>    inStock: true, 
+                <br>    price: 1.99, 
+                <br>    flavors: ["grape", "apple", "cherry"]
+              <br>  };
+            </blockquote>
+        </p>
+    </section>
+
+    <section id="187">
+        <h2>187. Accessing Data Out Of Objects</h2>
+        <p>
+            Two ways of getting information out of an objects. The first we can use square brackets 
+        </p>
+            <blockquote>
+                person['firstName']
+            <br>'Antony'
+            </blockquote>
+        <p>
+                The second way is 
+                <blockquote>
+                    person.lastName
+               <br> 'Gregory'
+                </blockquote>
+        </p>
+        <p>
+            Both ways return a string. But there is an important distinction. To help us understand what is going on 
+            let's talk about what happens when we make an object. When we make a key: 'value', not only the value is returned as a string 
+            but the key is also converted to a string (except for symbols, which we will cover later).
+            So if we create a some properties that rank certain years as good or bad i.e.
+        </p>
+        <blockquote>
+            const yearRank = {1999: "good", 2020: "bad"};
+          <br>      undefined
+        </blockquote>
+        <p>
+            Something I've just realised is that I cannot pull the information out using the yearRank.1999 method. 
+            Using this method returns a "syntax error: unexpected number."
+            To get the info out I have to use the yearRank["1999"] method. 
+        </p>
+        <p>
+            Using the [squarebrackets] method also has some additional functionality in that we can use an expression.
+            <blockquote>
+                yearRank['2020']
+      <br>         'bad'
+      <br>         yearRank['20' + '20']
+      <br>         'bad'
+            </blockquote>
+        </p>
+        <p>
+            THe above method concatonates the seperate strings in to a key.  
+            Why would you use this?
+        </p>
+        <p>
+            Okay so the example given, I'm going to be totally honest, I don't really understand why you would want to use this. 
+            <blockquote>
+                            let birthYear = 2020
+                   <br>     undefined
+                   <br>     yearRank[birthYear]
+                   <br>     'bad'
+                   <br>     birthYear
+                   <br>     2020
+            </blockquote>
+            It seems like you can cross reference properties inside of objects. 
+        </p>
+    </section>
+
+    <section id="ex30">
+        <h2>Coding Excercise 30: Object Access Excercise</h2>
+        <p>
+            I'm conpletely stumped on this. 
+            We are given an object named restaurant that contains a name, address, city and zipcode. 
+            We have to create a variable named fullAddress that points to a string using the information from restaurant.
+            fullAddress should point to a string that includes the address, city, state, and zipcode from the restaurant object. 
+            The address should look like "64 Johnson Avenue, Brooklyn, NY 11206"
+            Here's the code we get...
+            <blockquote>
+      <br>          const restaurant = {
+      <br>              name: 'Ichiran Ramen',
+      <br>              address: `${Math.floor(Math.random() * 100) + 1} Johnson Ave`,
+      <br>              city: 'Brooklyn',
+      <br>              state: 'NY',
+      <br>              zipcode: '11206',
+      <br>          }
+            </blockquote>
+            The address appears as math.random so that people can't cheat on the test.
+        </p>
+        <p>
+            Right, so I need to get this: "64 Johnson Avenue, Brooklyn, NY 11206" which is basically excluding the name. 
+            I tried to slice it but it's not actually an array. They all appear as a single object i.e. 
+        </p>
+        <p>
+            No idea what's going on here. I got it to work in the console with 
+            <blockquote>
+                console.log; fullAddress.address +`, ` + fullAddress.city +`, ` + fullAddress.state + ` ` + fullAddress.zipcode;
+                <br> '50 Johnson Ave, Brooklyn, NY 11206'
+            </blockquote>
+
+        But that won't work in the actual Colt Steele question page.
+        I had to look up the answer on Reddit, which has worked on the answer page but not in the actual console. Here it is.
+        <blockquote>
+            let fullAddress = restaurant["address"] + restaurant["city"] + restaurant["state"] + restaurant["zipcode"];
+        </blockquote>
+        BUt yeah, it won't work in the console. Anyway. I've spent 4 hours on this. What a joke. Arghhh.
+        </p>
+        <p><h4>recap</h4>
+            We have 
+            <blockquote>
+        const palette = {
+         <br>   red: '#eb4d4b',
+         <br>   yellow: '#f9ca24',
+         <br>   blue: '#30336b'
+         <br>   }
+         </blockquote> 
+        We can access data out in 3 ways.
+        <blockquote>
+            palette.red
+        </blockquote>
+        <blockquote>
+            palette['blue']
+        </blockquote>
+        let color = 'yellow';
+        palette[color]
+        </p>
+
+    </section>
+
+    <section id="188">
+        <h2>188. Modifying Objects</h2>
+        <p>
+            We start by recapping how to access data. I think I need to recap this myself. 
+            I had Claude Friday till Sunday and then went to see Russel BRand on Monday night. Tuesday was a bit of a write off. 
+            It's amazing how quickly your brain can foret. Really annoying. Okay, I just put a recap on the end of the last section. 
+            Still not sure about it. I'll have to recap this section. Let's crack on with updating
+        </p>
+        We create an object called midterms.
+        <blockquote>
+            const midterms = {danielle: 96, Thomas: 78}
+        </blockquote>
+        lets say we got thomas' score wrong and we want to upgrade it to 79.
+        <blockquote>
+            midterms.Thomas = 79
+        </blockquote>
+        we can also add in new people
+        <blockquote>
+            midterms.ezra = 85
+        </blockquote>
+
+    </section>
+
+    <section id="189">
+        <h2>189. Nesting arrays &amp; Objects</h2>
+        <p>
+            <blockquote>
+                const comments = [
+                    {userName: 'Tammy', text: 'hello', votes: 9},
+                    {username: 'FishBoi',  text: 'glub glub', votes: 12387}
+                    ]
+            </blockquote>
+            <p>
+                from the console
+                <blockquote>
+                    const comments = [
+            <br>    {userName: 'Tammy', text: 'hello', votes: 9},
+            <br>    {username: 'FishBoi',  text: 'glub glub', votes: 12387}
+            <br>    ]
+                </blockquote>
+                Then to get glub glub
+                <blockquote>
+                    comments[1].text
+            <br>    'glub glub'
+                </blockquote>
+                and
+                <blockquote>
+                    comments[0].votes
+         <br>       9
+                </blockquote>
+
+            </p>
+            Okay, that is the end of this section. Colt does show us some code from reddit in which there are numerous arrays and objects nested within each other.
+            
+        </p>
+    </section>
+</body>
+</html>
