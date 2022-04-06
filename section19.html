@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeating Stuff With Loops</title>
+</head>
+<body>
+    <h1>Repeating Stuff With Loops. Section 19</h1>
+        <section>
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#190">190. What Matters in this section</a></li>
+                <li><a href="#191">191.Intro to For Loops</a> </li>
+                <li><a href="#ex31">Coding Excercise 31: Our First for Loop Practice</a></li>
+                <li><a href="#192">192. More For Loops Examples</a> </li>
+                <li><a href="#ex32">Coding Excercise 32: More For Loops Practice</a> </li>
+                <li><a href="#193">193. THe Perils of Infinte Loops</a> </li>
+                <li><a href="#194">194. Looping Over Arrays</a> </li>
+                <li><a href="#ex33">Coding Excercise33: Iterating Arrays Excercise</a> </li>
+                <li><a href="#195">195. Nested Loops</a> </li>
+                <li> <a href="#196">196. Another Loop: The While loop</a></li>
+                <li> <a href="#197">197. The Break Keyword</a></li>
+                <li> <a href="#198">198. Writing a guessing Game</a></li>
+                <li> <a href="#199">199. The Lovely For...Of Loop</a></li>
+                <li><a href="ex34">Coding Excercise 34: For..Of Practice</a> </li>
+                <li> <a href="#200">200. Iterating Over Objects</a></li>
+                <li> <a href="#201">201. Todo List Project Intro</a></li>
+                <li> <a href="#202">202. Todo List Project COdeAlong</a></li>
+            </ul>
+        </section>
+
+        <section id="191">
+            <h2>191. Intro to For Loops</h2>
+            <p>
+                <ul>
+                    <li>Loops allow us to repeat code</li>
+                        <ul>
+                            <li>"print 'hello' 10 times"</li>
+                            <li>Sum all numbers in an array</li>
+                        </ul>
+                    <li>
+                        <ul>
+                            <li>for loop</li>
+                            <li>while loop</li>
+                            <li>for...of loop</li>
+                            <li>for...in loop</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                We go through the following - 
+                <blockquote>
+                    for (let i = 1; i<= 10; i++) {
+            <br>           console.log(i);
+            <br>         }
+                </blockquote>
+                The above says i = 1 and add one to i for as long as i is less than or equal to 10. I have put this into the JS file linked to this 
+                html file and you can see the result in the console.
+            </p>
+        </section>
+
+        <section id="ex31">
+            <h2>Coding Excercise 31: Our First For Loop Practice</h2>
+            <p>
+                <blockquote>
+                    // Print out "Da ba dee da ba daa" 6 times, using a for loop
+                 <br>   for (let i = 1; i<= 6; i++) {
+                 <br>       console.log("da ba dee da ba daa");
+                 <br>   }
+                </blockquote>
+            </p>
+        </section>
+
+        <section id="192">
+            <h2>192. More For Loops Examples</h2>
+            <p>Okay so we just go through some different ways of starting.
+                Woah, I just crashed my computer. 
+                I wrote
+                <blockquote>    
+                    for (let d = 10; d <= 1000; d * 10) {
+                     <br>   console.log(d)
+                    }
+                </blockquote>
+                And it just ran forever. COuldn't close the page. Then chrome just closed itself. I'll not do that again.
+                See the JS file or look at the console other things that I ran n(that didn't crash the computer).
+            </p>
+        </section>
+
+        <section id="ex32">
+            <h2>Coding Excercise 32: More For Loops Practice</h2>
+            <p>
+                <blockquote>
+                for (let z = 25; z>=0; z -= 5){
+             <br>       console.log(z);
+            <br>    }
+                </blockquote>
+                See JS page
+            </p>
+        </section>
+
+        <section id="193">
+            <h2>The Perils of Infinite Loops :(</h2>
+            <p>
+                He just ran an infinite loop and said don't ever run this on your own computer. I already ran 2 and crashed my browser each time. lolz.
+
+            </p>
+        </section>
+
+        <section id="194">
+            <h2>Looping Over Arrays</h2>
+            <p>
+                Loopin over an array is also called <em>iterating</em> an array.
+                Colt brings in an array of animal names. He runs it forwards first. Then he runs it backwards. 
+                Forwards looks like
+                <blockquote>
+                    for (let i = 0; i < animals.length; i++) {
+                        console.log(i, animals[i])
+                    }
+                </blockquote>
+                    backwards looks like
+                    <blockquote>
+                        for (let i = animals.length -1; i >= 0; i--) {
+                            console.log(animals[i])
+                        }
+                    </blockquote>
+                    I think I'm understanding this. animals.length gives us the number of entries, we have to -1 becasue 
+                    the array starts from zero. We then want to run until i >= 0. And we want to run backwards by -1 each time.
+
+            </p>
+        </section>
+
+        <section id="ex33">
+            <h2>Coding Excercise 33: Iterating Arrays Excercise</h2>
+            <p>
+                    Wooo, had to go to the discord for this one. and to be honest, I probably didn't need to as the solution was pretty straight forward. 
+                    But I did learn another way of doing the task. I also discovered a guy on discord that has made videos of each of the excercises. 
+                    Cool Beans.
+                    Anyway, it goes like this. Off the top of my head.
+                    <blockquote>
+                        const people = ["Scooby", "Velma", "Daphne", "Shaggy", "Fred"]; //DONT TOUCH THIS LINE!
+            <br>        for(let i = 0; i<=6; i++) {
+            <br>        console.log(people[i].toUpperCase)
+            <br>        }
+                    </blockquote>
+                    Okay, let me check. NOpe got it wrong. it's This
+                    <blockquote>
+                        for(let i = 0; i <=people.length -1; i++) {
+                            console.log(people[i].toUpperCase())
+                        }
+                    </blockquote>
+                    You can also use 
+                    <blockquote>
+                        people.forEach(name => console.log(name.toUpperCase()))
+                    </blockquote>
+                    But I don't get how this works yet tbh.
+            </p>
+        </section>
+
+        <section id="195">
+            <h2>195. Nested Loops</h2>
+            <p>
+                Riiight then. So we are doing some pretty complicated stuff here. Seems like total gobledigook to me at the moment, so let's get cracking!
+                so we have 
+                <blockquote>
+                    let str = 'LOL';
+               <br> for (let i = 0; i <= 4; i++){
+            <br>        console.log("outer:", i);
+            <br>        for(let j = 0; j < str.length; j++) {
+             <br>           console.log(' Inner: ', str[j]);
+              <br>    }
+         <br>      }     
+                </blockquote>
+            </p>
+            <p>
+                So what I think the above is saying - first we create str = LOL. Then we create our first loop.
+                Ahh, look, basically there are two loops. One loop runs 5 times but before it can run it's consequencial loop it has to run 
+                the inside loop the length of str which = LOL which I think is 2.
+            </p>
+            <p>
+                Okay, so he didn't really explain that one but he does go on to this next 
+                <blockquote>
+               <br>     for(let i = 1; i <= 10; i++) {
+                <br>        console.log('i is: ${i}')
+                  <br>      for(let j = 1; j < 4; j++) {
+                         <br>    console.log('    j is: ${j}')
+                         <br>    }
+                        <br>  }
+                </blockquote>
+                And thqt creates This
+                <blockquote>
+              <br>      i is: 1
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 2
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 3
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 4
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 5
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 6
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 7
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 8
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 9
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+              <br> i is: 10
+              <br>     j is: 1
+              <br>     j is: 2
+              <br>     j is: 3
+                </blockquote>
+                And that is basically for every time it runs i, it runs j three times. fab.
+            </p>
+            <p>
+                OKay, we now go on to something Colt say's comes up quite a lot. That is how to we can 
+                iterate or traverse across nested arrays.
+                Here's an example
+                <blockquote>
+                    <br> const seatingChart = [
+                    ['Kristen', 'Erik', 'Namita'],
+                    ['Geoffrey', 'Juanita', 'Antonio', 'Kevin'],
+                    ['Yuma', 'Sakura', 'Jack', 'Erika']
+                    ]
+                </blockquote>
+                OKay, so console.log that and we get 
+                <blockquote>
+                <br>    (3) [Array(3), Array(4), Array(4)]
+                <br>    0: Array(3)
+                <br>    0: "Kristen"
+                <br>    1: "Erik"
+                <br>    2: "Namita"
+                <br>    length: 3
+                <br>    [[Prototype]]: Array(0)
+                <br>    1: Array(4)
+                <br>    0: "Geoffrey"
+                <br>    1: "Juanita"
+                <br>    2: "Antonio"
+                <br>    3: "Kevin"
+                <br>    length: 4
+                <br>    [[Prototype]]: Array(0)
+                <br>    2: Array(4)
+                <br>    0: "Yuma"
+                <br>    1: "Sakura"
+                <br>    2: "Jack"
+                <br>    3: "Erika"
+                <br>    length: 4
+                <br>    [[Prototype]]: Array(0)
+                <br>    length: 3
+                <br>    [[Prototype]]: Array(0)
+                </blockquote>
+            </p>
+            <p>
+                Now what do we do?
+                Well. to get it to print i jsut typed console.log(seatingChart). Woop. I knew how to do that. 
+                But to put it into a loop? Not so sure. 
+                <blockquote>
+                    for (let i = 0; i <= seatingChart.length; i ++){
+                        console.log(seatingChart[i])
+                    }
+                </blockquote>
+                Ah, okay, so it does print out differently to just straight up console.log. we get each array printed seperately, like so
+                <blockquote>
+                <br>    (3) ['Kristen', 'Erik', 'Namita']
+                <br>    0: "Kristen"
+                <br>    1: "Erik"
+                <br>    2: "Namita"
+                <br>    length: 3
+                <br>    [[Prototype]]: Array(0)
+                <br>    section19.js:61 
+                <br>    (4) ['Geoffrey', 'Juanita', 'Antonio', 'Kevin']
+                <br>    0: "Geoffrey"
+                <br>    1: "Juanita"
+                <br>    2: "Antonio"
+                <br>    3: "Kevin"
+                <br>    length: 4
+                <br>    [[Prototype]]: Array(0)
+                <br>    section19.js:61 
+                <br>    (4) ['Yuma', 'Sakura', 'Jack', 'Erika']
+                <br>    0: "Yuma"
+                <br>    1: "Sakura"
+                <br>    2: "Jack"
+                <br>    3: "Erika"
+                <br>    length: 4
+                <br>    [[Prototype]]: Array(0)
+                </blockquote>
+                Okay, so slight difference?
+            </p>
+            <p>
+                OKay, so next we want to create each student on a seperate line. We take our original... 
+                <blockquote>
+                <br>    for (let i = 0; i >= seatingChart.length; i ++){
+                 <br>       console.log(seatingChart[i])
+                 <br>   }
+                </blockquote>
+                and turn it into 
+                <blockquote>    
+        <br>        for (let i = 0; i < seatingChart.length; i++) {
+        <br>            const row = seatingChart[i];
+        <br>              for(let j = 0; j < row.length; j++)
+        <br>                  console.log(row[j])
+        <br>         }
+                </blockquote>
+                Let's see if it works
+            </p>
+            <p>
+                And yep, now we get
+                <blockquote>
+                <br>    Kristen
+                <br>    Erik
+                <br>    Namita
+                <br>    Geoffrey
+                <br>    Juanita
+                <br>    Antonio
+                <br>    Kevin
+                <br>    Yuma
+                <br>    Sakura
+                <br>    Jack
+                <br>    Erika
+                </blockquote>
+                Sheesh, I just realised I've not been using back-ticks on my template literals. So my stuff has actually been wrong. Sad face.
+            </p>
+            <p>
+                Okay, so to print the row numbers 
+                <blockquote>
+                <br>    for (let i = 0; i < seatingChart.length; i++) {
+                <br>        const row = seatingChart[i];
+                <br>        console.log(`row #${i + 1}`)
+                <br>          for(let j = 0; j < row.length; j++) {
+                <br>          console.log(row[j]) 
+                <br>      }
+                <br>     }
+                </blockquote>
+                and now This
+                <blockquote>
+                <br>    row #1
+                <br>    Kristen
+                <br>    Erik
+                <br>    Namita
+                <br>    row #2
+                <br>    Geoffrey
+                <br>    Juanita
+                <br>    Antonio
+                <br>    Kevin
+                <br>    row #3
+                <br>    Yuma
+                <br>    Sakura
+                <br>    Jack
+                <br>    Erika
+                </blockquote>
+            </p>
+        </section>
+
+        <section id="196">
+                <h2>196. Another Loop: The While Loop</h2>
+                <p> 
+                    Right so we did the following which creates a list 1-10. 
+                    <blockquote>
+                    <br>    let count = 0;
+                    <br>    while (count < 10) {
+                    <br>        count++;
+                    <br>        console.log(count)
+                    <br>    }
+                    </blockquote>
+                    <p> Now we're going to create a secret password, a prompt to enter the secret password, and a while loop
+                    that repeats the prompt until the password is correct, at which point we should log that the answer is correct.</p> 
+                    <p>
+                        So we want 
+                        <ul>
+                            <li>secret password</li>
+                            <li>prompt</li>
+                            <li>a <em>while</em> loop that loops until correct</li>
+                            <li>a congrats message in the log</li>
+                        </ul>
+                    </p>
+                    <p>So the secret password will be a const value. The prompt is in the form let something = prompt("asdca")
+
+                    </p>
+                        <p>
+                            Here is my solution 
+                        </p>
+                    <blockquote>
+                    <br>    const secret = "1115";
+                    <br>
+                    <br>    let guess = prompt("Enter the secret");
+                    <br>    while (guess !== secret) {
+                    <br>        guess = prompt("Try again");
+                    <br>    }
+                    <br>    console.log("congrats")
+                    </blockquote>
+                </p>
+        </section>
+
+        <section id="197">
+            <h2>197. The Break Keyword</h2>
+            <p>
+                break; break; break; break; break; break; break; break; break; break; break; break; break; 
+                Right, this is about the break; Keyword. 
+            </p>
+            <article>
+                <h4>what are we doing?</h4>
+                Okay, we are going to make a cool little prompt that asks the user to input some text, the computer will then just repeat whatever is typed. The break keyword will be "stop copying me". Ahahaha. Colt is a funny guy. Here goes.
+            </article>
+            <h4>how do we do it?</h4>
+            <ul>
+                <li>we need to create a let statement variable</li>
+                    <ul><li>let input = prompt ("hey, say something!")</li></ul> 
+                    &emsp;&emsp;<em>this is creating a prompt under the name <u><b>"input"</b></u>.</em>
+                <li>We have a <em>while</em> loop</li>
+                    <ul><li><em>while</em>(true) {</li></ul>
+                    &emsp;&emsp;<em>I think this is fairly self explanatory?</em>
+                <li>Now we create our response to the input by returning the input as the prompt</li>
+                    <ul><li>input = prompt(input)</li></ul>
+                    &emsp;&emsp;<em>this runs the input prompt again but this time with the previous input. At this point we have an <b>infinite loop</b> which is <u><b><em>bad</em></b></u></em>
+                <li>Next we need our if statement, which will include our <b><em>Break Keyword</em></b></li>
+                        <ul><li>if(input.toLowerCase() === "stop copying me") break;</li></ul>
+                        &emsp;&emsp;<em>again, fairly self explanatory - if the input is "stop copying me" then break out of the loop. Note that we included a <b>.toLowerCase</b> so that the input doesn't have to be case sensitive</em>
+                            <ul><li>console.log("okay you win"</li> </ul>
+                            <em>And that is the end of our while loop with a break keyword</em>
+            </ul>
+            <article>
+                <blockquote>
+                <br>    let input = prompt("Hi, say something")
+                <br>    while(true) {
+                <br>    input = prompt(input);
+                <br>    if (input.toLowerCase() === "stop copying me") break;
+                <br>    }
+                </blockquote>
+                I also did
+                <blockquote>
+                <br>    let input = prompt("Enter Me")
+                <br>    while(true) {
+                <br>    if (input.toLowerCase() === "me") break;
+                <br>    input = prompt(input);
+                <br>    }
+                <br>    console.log("Yes, you.")
+                </blockquote>
+                In the above I put the if statement before the input loop so that if the answer is correct the first time it won't run again regardless.
+            </article>
+            <article>
+                <p>Okay cool. So I think I can write that off the top of my head now. Probably not that much of a feat but it makes me happy. Let me try</p>
+                <blockquote>
+                <br>    let input = prompt("let's see if I can do this off the top of my noggin")
+                <br>    while(true) {
+                <br>    if(input.toLowerCase() === "yes you can") break;
+                <br>    input = prompt(input);
+                <br>    }
+                <br>    console.log("Well done!!!")
+                </blockquote>
+                <p>
+                    Okay, well doing that bit at the beginning really helped. Where I wrote down the stages in bullet points. Then repeatedly writing the code out in the JS file really helped too. I must remember to do that. I know they say "don't try and commit this to memory" but it does help in the long run I think. 
+                </p>
+            </article>
+        </section>
+
+        <section id="198">
+            <h2>198. Writing a Guessing Game</h2>
+            <article>
+                <h4>Things we need</h4>
+                <p>Okay, here is a bullet list of things we need. It's quite long.</p>
+                <ul>
+                    <li>first of all we create the prompt with a parseInt to make sure it's not NaN</li>
+                        <ul><li>let maximum = parseInt(prompt("enter maximum number"));</li></ul>
+                       &emsp;&emsp;     <em>This creates a prompt for the user to enter a number, it then checks the entry is an actual number</em>
+                    <li> Secondly we have to create the const variable that stores the random number generated between 1 and the max number</li>
+                        <ul><li>const maxNum = Math.floor(Math.random() * maximum) + 1;</li></ul>
+                        <em>more on this is expained below</em>
+                    <li>Now we are going to add in an if statement incase of NaN</li>    
+                </ul>
+            </article>
+            <p>
+                Okay, so we are going to build a little game that asks you to put in a max number, we then generate a number between 1 and that max number. We have to guess and the console will tell us if we are too high or too low. 
+                first we enter the max number which i guess will be <br>
+                 const maxnum = prompt("enter number")?
+                <blockquote>
+                    it's <br>
+                    let maximum = prompt("enter the maximum number")
+                </blockquote>
+                So I wasn't too far off. The reason Colt gives for it being let is incase someone enters NaN 
+                . IN this case we want to parseInt on the prompt that we get back from the user. Apparently this is why we have to use let instead of const. so
+                <blockquote>
+                    let maximum = parseInt(prompt("Enter the max number"));
+                </blockquote>
+                Secondly we have to generate our random number using Math.floor(Math.random() within 1 and the maximum number entered through the prompt. We save it in a const variable 
+                <blockquote>
+                    If you rememeber to generate a random number between 1 and ten we use <br>
+                    Math.floor(Math.random() * 10) + 1
+                </blockquote>
+                However, we want our numbers to be between 1 and our maximum number put in by the user, so
+                <blockquote>
+                    Math.floor(Math.random() * maximum) +1;
+                </blockquote>
+                save this as the variable targetNum, which is the target number that we will be trying to guess correctly.
+                <blockquote>
+                    const targetNum = Math.floor(Math.random() * maximum) +1; 
+                </blockquote>
+            </p>
+            <article>
+                <p>
+                    So at this point let's just check that we are infact generating a random number in the console. We use 
+                </p>
+                <blockquote>
+                    let maximum = parseInt(prompt("Enter your max number"));
+              <br>    
+              <br>  const targetNum = Math.floor(Math.random() * maximum) + 1;
+              <br>  console.log(targetNum)
+                </blockquote>
+                <p>
+                    And indeed it does create a prompt and then a random number. 
+                </p>
+            </article>
+
+            <article>
+                <p>Now we have to create an if statement incase of NaN is entered.</p>
+                <p> We do this by creating a !falsey on maximum so, if(!maximum) and then creating another prompt </p>
+                <blockquote>
+                    let maximum = parseInt(prompt("Enter your max number")); <br>
+                    if(!maximum) { <br>
+                        maximum = parseInt(prompt("Please enter valid number!")); <br>
+                    } <br>
+                    const targetNum = Math.floor(Math.random() * maximum) + 1; <br>
+                    console.log(targetNum)
+                </blockquote>
+                HOWEVER!!! We actually want that if(!maximum) to run continously until it isn't true. TO do this we change it to a while(!maximum) statement. This way, as long as (!maximum) is true, it will continue to loop.
+            </article>
+            <article>
+                <p>
+                    So now we have 
+                    <blockquote>
+                        let maximum = parseInt(prompt("Enter your max number"));            <br>
+                        while(!maximum) {                                                   <br>
+                            maximum = parseInt(prompt("Please enter a valid number"));      <br>
+                        }                                                                   <br>        
+                        const targetNum = Math.floor(Math.random() * maximum) + 1;          <br>    
+                        console.log(targetNum)                                              <br>    
+                    </blockquote>
+                    And this will loop the initial statement until !maximum is not true. Cool.(!maximum means the parseInt returns NaN which is falsey) 
+                </p>
+            </article>
+            <article>
+                Okay, next up we create the guess section. we create the variable let guess = <br>
+                again, we want to parse this as it will be converted to a string so we convert it back. 
+                <blockquote>
+                let guess = parseInt(prompt("enter your guess!"));
+                </blockquote>
+                next we want to create another 
+                <blockquote>
+                while (guess !== targetNum) {
+                </blockquote>
+                then into an if statement, and then a else
+                <blockquote>
+                    if(guess > targetNum) {
+                        guess = prompt("Too high! Enter a new guess:")
+                    } else {
+                        guess = prompt("Too low! Enter a new guess:")
+                    }
+                }
+                </blockquote>
+                <p>So we go: let guess = parse...into a while(guess !== targetNum) { guess = parseInt...} loop...that then goes into 
+                    an if statement that says too high or an else statement that says too low. 
+                </p>
+                <p>
+                    The whole thing looks like this
+                <blockquote>
+<!--maximum statement-->            let maximum = parseInt(prompt("Enter your max number"));                        <br>
+<!--while(!maximum)-->              while(!maximum){                                                                <br>
+<!--re-prompt-->                    maximum = parseInt(prompt("Please enter a valid number"));                  <br>
+                                    }                                                                               <br>
+<!--targetNum-->                    const targetNum = Math.floor(Math.random() * maximum) + 1;                      <br>
+<!--console.log-->                  console.log(targetNum)                                                          <br>
+                                                                                                                    <br>
+<!--guess prompt-->                 let guess = parseInt(prompt("Guess the random number"));                        <br>
+                                                                                                                    <br>
+<!--while(guess !== targetNum)-->   while (guess !== targetNum){                                                    <br>
+<!--if guess > targetNum-->         if (guess > targetNum) {                                                        <br>
+<!--guess prompt too high-->        guess = parseInt(prompt("Too high! Enter a new guess:"));                   <br>
+<!--else-->                         } else {                                                                        <br>
+<!--guess prompt too low-->         guess = parseInt(prompt("Too low! Enter a new guess"));                     <br>
+                                    }                                                                               <br>
+                                    }                                                                               <br>
+<!--console.log-->                  console.log("Correct!")                                                         <br>
+                </blockquote>
+                    Okay, so now I'm going to try and write out the whole thing without looking. It'll take me a few tries. Here goes nothing.
+                </p>
+                <p>
+                    Okay, cool, I did it. I managed to do it off the top of my head. Well chuffed with that.
+                    it's in the JS file and starts on line 192.
+                </p>
+            </article>
+            <article>
+                <p>We are actually not yet finished with this lesson.</p>   
+                <p>NExt we are going to add in something that lets us know how many guesses it took us to get the correct answer.</p>
+                <p>
+                  We create a variable - let attempts = 1; (put this under let guess) and then every time we run the while (guess !) command it ticks through another attempt as we put attempts++; underneath it (between the while and the if statements). In the console.log("congratulations! It took you ${attempts} guesses") This is a string template literal.
+                </p>
+                <p>
+                    Okay, let me see if I can put this all in without looking again. OKay, my attempts didn't work.
+                    Wait, I had a look at the code and realised I'd not used backticks on the string template literals. It works now. Cool!
+                </p>
+                <p>
+                    Now we want to add in something to let us quit early. If the prompt is q then we break. The problem is that the q will never make it past the parseInt, instead it will just return NaN.
+                    One way around this is to remove the parseInt from the if and else guess and put it inside the 
+                    while(parseInt(guess) !== targetNum). We then put a new, additional if statement after the while statement, but before the attempts statement, as if (guess = "q") break;
+                </p>
+                <p>
+                    Okay, that works but it does return the console log of congrats etc. We can add in an addition 
+                    if (guess === "q"){
+                        console.log("you quit");
+                    }
+                </p>
+                <p>Right then, I'm moving on. Have a look at the JS file if you want to see the finished item. I've had fun. Taken me all day but then i have been trying to commit to memory</p>
+
+            </article>
+
+        </section>
+
+        <section id="199">
+            <h2>199. The Lovely For...Of Loop</h2>
+            <p>
+                const subreddits = ['cringe', 'books', 'chickens', 'funny', 'pics', 'soccer']
+            </p>
+            <p>
+                To print out the above array we could use a 'for' loop.
+            </p>
+            <blockquote>
+                for (let i = 0; i < subreddits.length; i++){                        <br>
+                    console.log(`Visit reddit.com/r/${subreddits[i]})               <br>
+                    }                                                               <br>
+            </blockquote>
+            <p>
+                But there is now an easier way of doing this, called a For..Or loop
+            </p>
+            <p>
+                A For..Of loop looks like
+            </p>
+            <blockquote>
+                for (variable of iterable) { <br>
+                statement                   <br>
+            }                               <br>
+            </blockquote>
+            <p>
+                So to rewrite the above array iteration we can go 
+            </p>
+            <blockquote>
+                for(let sub of subreddit) { <br>
+                    console.log(sub) <br>
+                } <br>
+            </blockquote>
+            <p>CHeck out line 220 in the JS file to see.</p>
+            <p>
+                Next we have nested For...Of loops. We're going back to the seating seatingChart
+            </p>
+            <blockquote>
+                const seatingChart = [  <br>
+                    ['Kristen', 'Erik', 'Namita'],  <br>
+                    ['Geoffrey', 'Juanita', 'Antonio', 'Kevin'],  <br>
+                    ['Yuma', 'Sakura', 'Jack', 'Erika']  <br>
+                    ]  <br>
+  <br>
+                for (let i = 0; i < seatingChart.length; i++) {  <br>
+                        const row = seatingChart[i];  <br>
+                        console.log(`row #${i + 1}`)  <br>
+                            for(let j = 0; j < row.length; j++) {  <br>
+                            console.log(row[j])   <br>
+                        }  <br>
+                    }  <br>
+            </blockquote>
+            <p>
+                So we can see the for loop that was required before. This is all reduced to
+            </p>
+            <blockquote>
+                for (let row of seatingChart) {
+                    for (let student of row) {
+                        console.log(student);
+                    }
+                }
+            </blockquote>
+            <p>
+                So it seems that what is happening here...there are 2 for statements. The first says get the row of the seating chart and the second says
+                get the student of the row. So are we setting the variable for row and student there? 
+            </p>
+            <p>Next in this part we have "A nice and easy way of iterating over arrays (or other iterable objects)"</p>
+            <p>
+                We can use for..of on strings.
+            </p>
+            <blockquote>
+                for (let char of "hello world") {
+                    console.log(char)
+                }
+            </blockquote>
+        </section>
+
+        <section id="ex34">
+            <h2>Coding Excercise 34. For...Of Practice</h2>
+            <p>
+                <blockquote>
+                    We're given an array called numbers. USe a For...Of loop to loop over it. <br>
+                    const numbers = [1,2,3,4,5,6,7,8,9]; <br>
+
+                    for(let i of numbers){
+                        console.log(i * i);
+                    }
+                </blockquote>
+            </p>
+        </section>
+
+        <section id="200">
+            <h2>200. Iterating Over Objects</h2>
+            <p>
+                What is an iterable object? Well, object literals are a no no. Object literals with curly braces and key value pairs, 
+                they are not considered iterables. Yes, they are considered objects but they are not considered iterable objects. 
+                An array, behind the scenes, is technically an object, a string is an object too. 
+                THe term object is a bit of a confusing one when we are talking about JS.
+            </p>
+            <p>
+                Okay, so I just had to go and ask a question in the discord chat. I didn't understand....I'll just copy and paste the question.
+                <blockquote>
+                    AntonyGregory — Today at 10:58
+Hi again,                       <br>
+I have two questions..                      <br>
+                    <br>
+Sorry to be an idiot but I feel a bit stuck on this. I'm not stuck on the exercise, it's just something on how the mechanics of it work.                    <br>
+I have looked at the MDN docs that you provided but, to be honest, it makes me more confused.                       <br>
+                    <br>
+I'm currently on 200. Iterating Over Objects and this has come up again.                    <br>
+                    <br>
+Colt creates the following:                     <br>
+                    <br>
+const testScores = {                    <br>
+    keenan: 80,                     <br>
+    damon: 67,                      <br>
+    kim: 89,                    <br>
+    shawn: 91,                      <br>
+    marlon: 72,                     <br>
+    dwayne: 77,                     <br>
+}                   <br>
+                    <br>
+for(let person in testScores) {                     <br>
+    console.log(person);                    <br>
+}                   <br>
+                    <br>
+What I don't understand is how person is created.                       <br>
+                    <br>
+Q1) Is the For...In saying "inside testScore take the key of the key-value pair and label it person?                    <br>
+                    <br>
+But then I'm even more confused by console.log(${person} scored ${testScores[person]}); which creates                   <br>
+                    <br>
+keenan scored 80                    <br>
+damon scored 67                     <br>
+kim scored 89                   <br>
+shawn scored 91                     <br>
+marlon scored 72                    <br>
+dwayne scored 77                    <br>
+                    <br>
+Q2) How is ${testScores[person]} getting the value of the key-value pair?                   <br>
+                    <br>
+Any help greatly appreciated. Cheers                    <br>
+AntonyGregory — Today at 11:17                      <br>
+Ah okay,                    <br>
+So when we create the const testScores, testScores holds the value of the key-value pair?                       <br>
+We then have to assign the key as (person) using the For...Of/In?                   <br>
+Then we are basically saying ${testScores[person]} - show the value of the assigned key ${valueOf[assignedKey]}?                    <br>
+                </blockquote>
+            </p>
+            <p>
+                Had a response and seems that I am right to think in this way. 
+                Anyway, now we move on to 
+                <blockquote>
+                    Object.keys(testScores)
+                </blockquote>
+                <p>Which gives us an actual array made up of the keys from the object testScores. </p> 
+                <p>Then we also have</p>
+                <blockquote>
+                    Object.values(testScores)
+                </blockquote>
+                <p>Which creates an array made up of the values out of the object </p>
+                <p>There is also</p>
+                <blockquote>
+                    Object.entries(testScores)
+                </blockquote>
+                <p>Which gives us a nested array of key-value pairs </p>
+            </p>
+            <p>
+                All are shown here
+            </p>
+            <blockquote>
+                Object.keys(testScores)                                             <br>
+(6) ['keenan', 'damon', 'kim', 'shawn', 'marlon', 'dwayne']                         <br>
+Object.values(testScores)                                                           <br>
+(6) [80, 67, 89, 91, 72, 77]                                                        <br>
+Object.entries(testScores)                                                          <br>
+(6) [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]                    <br>
+0: (2) ['keenan', 80]                                                               <br>
+1: (2) ['damon', 67]                                                                <br>
+2: (2) ['kim', 89]                                                                  <br>
+3: (2) ['shawn', 91]                                                                <br>
+4: (2) ['marlon', 72]                                                               <br>
+5: (2) ['dwayne', 77]                                                               <br>
+length: 6                                                                           <br>
+[[Prototype]]: Array(0)                                                             <br>
+            </blockquote>
+            <P>Okay, so what can we do with this? Well, as we said earlier, we can't iterate over an object. We can iterate over arrays.
+                So by creating an array from these objects we are then able to iterate over them. So say we wanted to iterate over the keys for e.g.
+                we can make an array and then use a For...Of becasue that does work over arrays. 
+            </P>
+            <p>
+                Okay, so let's say we are interested in the values. And we want to sum up and average the values. 
+                As we saw above we can use Object.values(testScores) but use it inside of a For...Of 
+            </p>
+            <p>
+                Just trying to think what this may look like. for(let ) yeah I have no idea. Let me look at the clip.
+            </p>
+            <p>It's 
+                <blockquote><b>for(let score of Object.values(testScores)) { <br>
+                                        console.log(scores) <br>
+                                    } <br>
+                </b></blockquote></p>
+                
+                <p>
+                    Cool, I did that. Well, I've created an array of the scores printed out in the console.
+                </p>
+                <p>
+                    OKay, next we are going to total the scores. First we create the variable for total: let total = 0;
+                    We then add the total inside the loop with total += score; Now when we type total into the console we get the answer, or we can
+                    console.log it. 
+                </p>
+                <p>Wow, I'm feeling really overwhelmed with this now. I've been on this one lesson for 3 hours. ARGHHHHHHHHH</p>
+                <p>
+                    Right, so now we need to average the total but we can't count the number of entries from testScores. So we have to create
+                    let scores which will have a length. so let scores = object.values(testScores) which logs the number of entries. 
+                    <blockquote>
+                        let total = 0; <br>
+                        let scores = Object.values(testScores); <br>
+                        for(let score of scores) {
+                                total += score;
+                        }
+                        console.log (total / scores.length)
+
+                    </blockquote>
+                    
+                </p>
+
+        </section>
+
+        <section id="201">
+            <h2>201.ToDo List Project Intro</h2>
+            <p>
+                We are going to build a ToDo list that operates in the browser. We're going to use variables, 
+                loops, arrays and different array methods and some conditional logic as well. 
+            </p>
+            <p>We're going to build a very simple to do list that is all command line based</p>
+            <p>The commands are 
+                <ul>
+                    <li>"new" - Add A Todo</li>
+                    <li>"list" - List All Todos</li>
+                    <li>"delete" - Romove Specific ToDo</li>
+                    <li>"quit" - Quit App</li>
+                </ul>
+                <p>Right, I have no idea how to do this. What the heck. Well, he's created a single html page with the script. 
+                    I've already done that, this is that thing here. 
+                    We're going to do everything via prompt. 
+                </p>
+                <p>Here's how it works</p>
+                <ul>
+                    <li>type "new" in the prompt</li>
+                    <li>prompt says "enter new todo" let's say we enter collect eggs</li>
+                    <li>prompt then says '"collect eggs" added to the list'</li>
+                    <li>type "list" and the list is printed into the console with index, somehow seperated with stars</li>
+                    <li>type 'delete' and receive a prompt to use the index number of item wanted to be deleted</li>
+                    <li> display "todo removed"</li>
+                    <li>type "quit" to quit</li>
+                </ul>
+                <p>Tips for building. You're going to have a While loop. 
+                    Prompt for some input and while the results of the input
+                    whatever the user types, and the input is not equal to quit, 
+                    but get the quit part to work before anything else. 
+                    The actual storage of the todos will be done with an array. 
+                    We'll have an empty array aat the beginning.
+
+                </p>
+                <p>
+                    Okay, this is strickly for remembering. First we go
+                    <ul>
+                        <li>user input =prompt</li>
+                        <li>const todo array</li>
+                        <li>while(input !== 'quit' && input !== 'q') {</li>
+                            <ul>
+                                <li>if list  </li>
+                                    <ul>
+                                        <li>- conslog *** </li>
+                                        <li>then for(let i=0: i < todos.length; i++)</li>
+                                        <li>then another conslog</li>
+                                    </ul>
+                            </ul>
+                        
+                             
+                        <li>if else (input === 'new')</li>
+                            <ul>
+                                <li>const newTodo prompt</li>
+                                <li>todos push</li>
+                                <li>conslog</li>
+                            </ul>
+                        <li>if else (...'delete')</li>
+                            <ul>
+                                <li>const index = prompt</li>
+                                <li>conslog</li>
+                            </ul>
+                        <li>userInput prompt</li>
+                        <li>conslog okay you quit</li>
+                    </ul>
+                </p>
+            </p>
+            <p>
+                OKay, here is what we have so far...
+                <blockquote>
+                    let userInput = prompt('What would you like to do')             <br>
+                    const todos = ['collect eggs', 'clean room'];                   <br>
+                    while (userInput !== 'quit' && userInput !== 'q') {             <br>
+                        if(userInput === 'list') {                                  <br>
+                            console.log('*************')                            <br>
+                            for(let i = 0; i < todos.length; i++) {                 <br>
+                                console.log(`${i}: ${todos[i]}`)                    <br>
+                            }                                                       <br>
+                            console.log('*************')                            <br>
+                        } else if (userInput === 'new'){                            <br>
+                                const newTodo = prompt('ok, what is the new todo');   <br>
+                                todos.push(newTodo);   <br>
+                                console.log(`${newTodo} added to the list`)   <br>
+                        } else if (userInput === 'delete'){   <br>
+                                const index = prompt('okay, enter an index to delete;');   <br>
+                                console.log(`${index} deleted`)   <br>
+                        }   <br>
+                            userInput = prompt('What would you like to do')   <br>
+                    }   <br>
+                    console.log('okay, you quit')   <br>
+                </blockquote>
+            </p>
+            <p>
+                OKay, really strange thing happened. I thought the delete was working yesterday.
+                I'm sure I was adding and deleting items to the list. But I can't have been deleting them as I hadn't added in the .splice method.
+                I'll add it in now.  
+            </p>
+            <p>Okay, so we have to add in the splice method after delete 
+                I'm guessing we are going to add it between the const index and conslog (index)?
+                I'm not sure. Trying to rememeber what the splice looks like...index.splice() and then 
+                we will put in the (index,1)?
+            </p>
+            <p>
+                so index.splice(index,1)? Noooo it's todos.splice(3,1). But if 
+                I want it to be of the index then...let me look at the video. Ha, no way, I got it right!
+                I put todos.splice(index,1) between the const index and the conslog, which was correct. And, wow, it works!
+            </p>
+            <p>
+                Okay, I'm trying to add in the deleted array to show all the items that have been deleted, not just the item that has been deleted. I'm not able to do it right now though.
+            </p>
+            <p>
+                OKay, I followed the video through to the end and he shows us how to do it properly. It's quite complicated. 
+                But I've done it now anyway. Don't get all of it. There's now way I'm remembering it all. 
+            </p>
+            <img src="js for html.jpeg" alt="JS image">
+            <p>
+                OKay, well the cool thing is I just used an image for the first time in the html, but the bad thing is 
+                that I don't remember how to use the CSS to style it ha ha! OKay, well I guess I Can start refreshing on that. 
+                It'll actually make things more fun I expect. If I give more focus to styling my html docs, along side learning the new stuff. 
+                OKay, well that is this section complete.
+            </p>
+        </section>
+
+        
+        <script src="section19.js"></script>
+</body>
+</html>
