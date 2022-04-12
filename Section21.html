@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levelling Up our Functions. Section 21</title>
+</head>
+<body>
+    <h1>Section 21. Leveling UP our Functions</h1>
+    <section>
+        <h2>Contents</h2>
+    </section>
+    <section id="209">
+        <h2>What matters in this section?</h2>
+    </section>
+    <section id="210">
+        <h2>Function Scope</h2>
+        <p>
+            Colt creates a function called collect eggs. and inside the function he creates a variable called
+            let totalEggs = 6; Then he console.logs totalEggs, goes to the console and types in collectEggs.
+            So we start with 
+            <blockquote>
+                function collectEggs() { <br>
+                    let totalEggs = 6; <br>
+                    console.log(totalEggs) <br>
+                    } <br>
+            </blockquote>
+        </p>
+        <p>We go to the console and enter collectEggs() and we get 6.</p>
+        <blockquote>
+            collectEggs() <br>
+            6 <br>
+        </blockquote>
+        <p>We then take the console.log(totalEggs) outside of the function</p>
+        <blockquote>
+            function collectEggs() {
+                let totalEggs = 6;
+                }
+                console.log(totalEggs)
+        </blockquote>
+        <p>Now when we try to run that code we get totalEggs is not defined </p>
+        <p>why? Well it's in a function which hasn't been executed yet</p>
+        <p>What if we run the function first? </p>
+        <blockquote>
+            function collectEggs() {
+                let totalEggs = 6;
+                }
+                collectEggs();
+                console.log(totalEggs);
+        </blockquote>
+        <p>Nope, totalEggs is still not defined. What we are seeing here is function scope.</p>
+        <p>Variables that we define inside of a function, where we use the let keyword, they are scoped to that function, so we 
+            don't have access to that function after the fact. IT's like a little bubble, between the two braces of the 
+            fucntion is it's own little world with a glass dome around it, and totalEggs only lives in there.
+        </p>
+        <p>
+            So if I really needed access to totalEggs, we can create a variable outside of the function (above) and then inside the function
+            remove the (let) of let totalEggs = 6; so that we have totalEggs = 6; so that instead of using the let keyword
+            we just update the totalEggs. 
+        </p>
+        <blockquote>
+            let totalEggs = 0; <br>
+            function collectEggs() { <br>
+                totalEggs = 6; <br>
+            } <br>
+            <br>
+            console.log(totalEggs); <br>
+            collectEggs(); <br>
+            console.log(totalEggs); <br> 
+        </blockquote>
+        <p>
+            So that is an example of function scope. The function acts as a standalone machine that does not affect the world around it. 
+            HOwever we can open a door to the function by using the above behaviours. So outside the function
+            totalEggs = 0; we console.log(totalEggs) and get zero. We then run the machine and the machine collects 6 eggs. 
+            Now we console.log(totalEggs) again and we see that totalEggs now = 6. 
+        </p>
+        <p>
+            okay so now we move onto the scarlet macaw example. The example shows that a variable set outside of the 
+            function has an open door into the fucntion by default. 
+        </p>
+        <p>
+            We start with 
+        </p>
+        <blockquote>
+            let bird = 'Scarlet Macaw' ;
+            function birdWatch() {
+                let bird = 'Great Blue Heron' ;
+            }
+            birdWatch();
+            console.log(bird);
+        </blockquote>
+        And we get back Scarlet Macaw. THat's because the variable inside the function
+        is scoped to the function. However, if we console.log(bird) inside the function then we get back 
+        Great Blue Heron
+        <blockquote>
+            let bird = (Scarlet Macaw)
+            function birdWatch() {
+                let bird = 'Great Blue Heron';
+                console.log(bird);
+            }
+        </blockquote>
+        <p>
+            THe door exists where we delete the variable from inside the function. We then console.log(bird) and we get 
+            Scarlet Macaw
+        </p>
+        <blockquote>
+            let bird = 'Scarlet MAcaw';
+            function birdWatch() {
+            console.log(bird)
+        }
+        </blockquote> 
+    </section>
+
+    <section id="211">
+        <h2>211. Block Scope</h2>
+        <p>
+            We start with a very simple example. We have a variable let radius = 8; and then we have a conditional (the if statement)
+            We also create another variable msg. When we try and console.log msg it can't becasue it isn;t defined. We can also try PI but
+            that also is not defined.
+        </p>
+        <blockquote>
+            let radius = 8; <br>
+            if (radius > 0) { <br>
+                const PI = 3.14159; <br>
+                let msg = 'HIIII!' <br>
+             } <br>
+            console.log(radius) <br>
+            console.log(PI) <br>
+        </blockquote>
+        <p>
+           So this one is a block. Inside of the {} we call that a block. Except if it's a function. Then it's not a block.
+           A block includes things like conditionals, but also loops. THis basically works in the same way as 
+           the function bubble works. let and const are block scoped. var is not block scoped. THat's one of the main reasons
+           const and let were introduced. 
+        </p>
+        <p>
+            So if we declare a variable inside of a variable
+        </p>
+        <blockquote>
+        for (let i = 0; i < 5; i++) {
+                let msg = 'aeraerarv';
+                console.log(msg)
+        }
+        console.log(msg)
+        </blockquote>
+        <p>
+            So in the above the console.log outside the block will be undefined, but defined inside the block. 
+        </p>
+        <p>We then change the let msg variable to a var </p>
+        <blockquote>
+            for (let i = 0; i < 5; i++) {
+                var msg = 'aeraerarv';
+                console.log(msg)
+        }
+        console.log(msg)
+        </blockquote>
+        <p>Both console.log commands now show the msg. </p>
+    </section>
+
+    <section id="212">
+         <h2>212. Lexical Scope</h2>
+         <p>
+              <blockquote>
+                  function bankRobbery(){ <br>
+                      const heroes = ['Spiderman', 'Wolverine', 'Black Panther'] <br>
+                      function cryForHelp(){ <br>
+                          for (let hero of heroes) { <br>
+                              console.log(`Please Help Us, ${hero.toUpperCase()}` <br>
+                          } <br>
+                      } <br>
+                  } <br>
+              </blockquote>
+         </p>
+         <p>
+             So basically a nested function inherits from it's parents/grandparents. It does not work in reverse. 
+         </p>
+         <blockquote>
+            function bankRobbery(){ <br>
+                const heroes = ['Spiderman', 'Wolverine', 'Black Panther'] <br>
+                function cryForHelp(){ <br>
+                    function inner() {
+                        for (let hero of heroes) { <br>
+                            console.log(`Please Help Us, ${hero.toUpperCase()}` <br>
+                    } <br>
+                } <br>
+            } <br>
+            } <br>
+         </blockquote>
+
+    </section>
+
+    <section id="213">
+        <h2>213. Function Expressions</h2>
+        <p>
+            Right then, feeling a bit lost. kind of understand the last few vids. Off the top of my noggin, block scope, lexical scope. Forgot function scope. 
+            Now we're on function exressions. An entirely different way of defining a function. 
+            So far we've been Using
+        </p>
+        <blockquote>
+            function add(x, y){
+                return x + y;
+            }
+        </blockquote>
+        <p>The above is called a function statement. WE define a function using a function keyword</p>
+        <p>But there is a different way of defining a function and it actually involves storing a function in a variable, as follows</p>
+        <blockquote>
+            const square = function (num) {
+             return num * num;
+            }
+            square(7);
+        </blockquote>
+        <p>
+            As we can see above the function does not have a name. It's just function and then parentheses.
+        </p>
+        <p> This is called a function expression and everything to the right of the = is stored in the variable. We use
+            it in the same way as any other variable. 
+        </p>
+        <blockquote>
+            const add = function (x, y) {
+                add x + y;
+        }
+        </blockquote>
+        <p>So the main thing is to recognise that functions are values in javascript. 
+            We can store them, we can pass them around. JUst like we can pass around and store a number or an array or an object.</p>
+
+            <p>
+                Soon we'll see that we can pass functions as arguments! We can do crazy things! As Colt says§
+            </p>
+
+    </section>
+
+    <section id="214">
+        <h2>Higher Order Functions</h2>
+        <p>Functions that operate on/with other functions. 
+            <ul>
+                <h5>They  can:</h5>
+                <li>Accept other functions as arguments</li>
+                <li>Return a function</li>
+            </ul>
+        </p>
+        <p>
+            As we saw previously a function is a value that can be stored in a variable. It can be passed around. So if we can put it in a variable.
+            like
+        </p>
+        <blockquote>
+            let greet = function () {
+                console.log('Hi!')
+            }
+        </blockquote>
+        <p>I now have stored a function in this variable </p>
+        <blockquote>greet</blockquote>
+        <p>And we can execute the variable with </p>
+        <blockquote>greet()</blockquote>
+        and it will return 
+        <blockquote>Hi!</blockquote>
+        <p>IF I can stored that function as a variable then I can also pass it around as an argument</p>
+        <h3>Functions as Arguments</h3>
+        <p>We can define a function like this one </p>
+        <blockquote>
+            function callTwice(func) {  <br>
+                func();  <br>
+                func();  <br>
+            }  <br>
+  <br>
+            <p> and then pass it as an argument in another function like this!</p>
+            function laugh(){  <br>
+                console.log("hahahahahahaha")  <br>
+            }  <br>
+            callTwice(laugh)   <br>
+        </blockquote>
+
+        <p>We can use this callTwice to create 2 rolls of a die</p>
+        <blockquote>
+            function rollDie(){ <br>
+                let roll = Math.floor(Math.random() * 6) +1 <br>
+                console.log(roll) <br>
+            } <br>
+             <br>
+            callTwice(rollDie) <br>
+        </blockquote>
+        <p>However, if we do the following</p>
+        <blockquote>
+            callTwice(rollDie())
+        </blockquote>
+        <p>Then we are executing rollDie first and then passing the result through callTWice. SO if we roll a 5 then we will get 
+            5, 5.
+        </p>
+        <p>OKay so now we write another function</p>
+        <blockquote>
+            function callTenTimes(f)
+        </blockquote>
+        <p>this is going to run ten times</p>
+        <p>How do we get something to run ten times?</p>
+        <blockquote>
+            function callTenTimes(f){
+                for(let i = 0; i < 10; i++)
+            }
+        </blockquote>
+        <p>Then we are going to excecute whatever function (f) was passed in</p>
+        <blockquote>
+        function callTenTimes(f){   <br>
+            for (let i = 0; i < 10; i++)  <br>
+            f()  <br>
+        }  <br>
+        </blockquote>
+        <p>
+            Okay, that about wraps it up for this section. We have passed a function as an argument inside of another function.
+        </p>
+    </section>
+
+
+
+    <section id="215">
+        <h2>215. Returning Functions</h2>
+        <p>
+            Okay so this is pretty cool. We can create a function factory by returning a function. 
+            So you make a function. 
+        </p>
+        <p>First off we make a mystery function</p>
+        <h4><b><u>mystery function</u></b></h4>
+        <blockquote>
+            function makeMysteryFunction() {            <br>
+                const rand = Math.random();             <br>
+                if (rand > 0.5) {                       <br>
+                    return function() {                 <br>
+                        console.log('Congrats!')        <br>
+                    }                                   <br>
+                } else {                                <br>
+                return function() {                     <br>
+                    alert("Sorry, it's a no.")          <br>
+                    }                                   <br>
+                }                                       <br>
+            }                                           <br>
+            const mystery = makeMysteryFunction();      <br>
+            mystery();                                  <br>
+        </blockquote>
+        <p>Right, so the above creates a makeMysteryFunction with a random number generator. If the the rand is > 0.5 ten we console.log
+            congrats. Else return alert sorry it's a no. WE then assign and execute makeMysteryFunction() to mystery. We then execute 
+            mystery().
+        </p>
+        <p>Next we are making something that recognises range</p>
+        <h4><b><u>Is Between function</u></b></h4>
+        <p>TO make a function that reconises if a number is between 50 and 100</p>
+            <blockquote>
+                function isBetweenFunc(num) {
+                    return num >= 50 && num <=100;
+                }
+            </blockquote>
+        <p>Next we are going to make a function that makes other functions. </p>
+        <h4><b><u>Function Factory</u></b></h4>
+        <p>Okay, here is the interesting stuff.</p>
+             <p>In the above we have been writing the functions. What we are going to do now
+                 is make a factory function. A function that will make a function.
+             </p>
+        <p>we make the makeBetweenFunc and we pass in a min and a max. It is going to return a new function. 
+            This function is going to accept and argument that we are going to call num.
+        </p>
+        <p>All we do from within this function is return num >= min && num <= max</p>
+        
+
+        <blockquote>
+            function makeBetweenFunc(min, max) { <br>
+                return function (num) { <br>
+                    return num >= min && num <= max; <br>
+                } <br>
+            } <br>
+        </blockquote>
+        <p>WE need to then call makeBetweenFunc with a min and a max argument. If we do this into the console then 
+            the console returns this to us </p>
+        <blockquote>
+            makeBetweenFunc(5,10) <br>
+                ƒ (num) { <br>
+                     return num >= min && num <= max; <br>
+                } <br>
+        </blockquote>
+
+        <P>
+            Right, so we then make several other functions that build on the makeBetweenFunc
+        </P>
+        <blockquote>
+
+        </blockquote>
+
+    </section>
+
+
+    <section id="216">
+        <h2>216. Defining Methods</h2>
+        <p>
+            Right then, let's finish up this section!
+            Functions and objects and how they intersect to form methods.  
+        </p>
+        <p>A method is a function that has been placed as a property on an object.</p>
+        <P>For example, Math contains a bunch of methods that are functions stored as properties is a method that has </P>
+        <p>methods that are functions stored as properties.</p>
+        <p>methods that are functions stored as properties</p>
+        methods that are functions stored as propertiesmethods that are functions stored as properties
+        methods that are functions stored as Properties
+        methods that are functions stored as properties
+        methods that are functions stored as properties
+        okay. methods functions properties methods functions properties
+        <p>
+            Okay, anyway, let's jsut get into what Colt writes down.
+        </p>
+        <blockquote>
+            const myMath = {
+                PI: 3.14159
+                square: function (num) {
+                    return num * num;
+                },
+                cube: function (num) {
+                    return num ** 3;
+                }
+            }
+        </blockquote>
+    </section>
+
+    <section id="ex45">
+        <h2>Coding Excerise 45: Methods Excercise</h2>
+        <p>
+            Let me see if I can remember. we had to create an object 'square' that held the side and then squared the side for the area
+            and then * 4 for the perimeter. 
+        </p>
+        <blockquote>
+            const square = {
+                area: function (side){
+                    return side * side;
+                },
+                perimeter: function(side){
+                    return side * 4;
+                }
+
+            }
+        </blockquote>
+    </section>
+
+    <section id="217">
+        <h2>217. The Mysterious Keyword 'this'</h2>
+        <p>
+            Use the keyword 'this to access other properties on the same object'
+        </p>
+        <p>Example</p>
+        <blockquote> 
+            const person = {
+                first: 'Robert',
+                last: 'Watson',
+                fullName() {
+                    return `${this.first} ${this.last}`
+                }
+            }
+        </blockquote>
+    </section>
+
+    <section id="ex46">
+        <h2>Coding Excercise 46: Egg Laying Excercise</h2>
+        <blockquote>
+            const hen = {
+                name: 'Helen',
+                eggCount: 0,
+                layAnEgg() {
+                    this.eggCount++;
+                    return ('EGG');
+            }
+            };
+        </blockquote>
+    </section>
+
+    <section id="218">
+        <h2>218. Using Try/Catch</h2>
+        <p>
+            This is a way of catching errors before they crash everything.
+            We jsut wrap everyhting we want to test in a try { } and then end it with a console.log(error)
+        </p>
+        <blockquote>
+            try {
+                hello.toUpperCase();
+            } catch{
+                console.log("error")
+            }
+        </blockquote>
+        <p>
+            example, 
+        </p>
+        <blockquote>
+            function yell(msg){
+                console.log (msg.toUpperCase(). repeat(3));
+            }
+        </blockquote>
+    </section>
+
+<script src = "section21.js"></script>
+</body>
+</html>
+
+
